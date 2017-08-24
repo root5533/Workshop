@@ -1,0 +1,309 @@
+head{
+
+}
+body{
+	/*background-color:#91ccef;*/
+	font-family:century gothic,verdana, georgia;
+	font-size:14px;
+	margin:0px 120px 0px 120px;
+}
+/* Top login bar */
+#topBar{
+	height:43pt;
+	background-color:black;
+	color:white;
+	margin:0px;
+}
+
+#searchBar{
+	display:inline;
+	position:absolute;
+	top:15px;
+	left:15%;
+	
+}
+
+#search{
+	background-color:#f7d5d6;
+	border:0px;
+	padding:2px 5px 2px 5px;
+	border-radius:5px;
+	height:20px;
+}
+
+#loginBar{
+	display:inline;
+	position:absolute;
+	font-size:12px;
+	top:15px;
+	right:12%;
+	background-color:#636363;
+	border:0px;
+	border-radius:5px;
+	padding:2px;
+}
+
+#loginBar button{
+	background:none;
+	border:none;
+	color:white;
+}
+
+#loginBar button:hover{
+	color:black;
+}
+
+/* header and navigation bar */
+
+#logo{
+	width:60px;
+	float:left;
+	position:relative;
+	top:10px;
+	left:200px;
+}
+
+#header{
+	height:135px;
+	background-color:#136360;
+	margin:0px;
+}
+
+h1{
+	text-align:center;
+	color:#f5f705;
+	margin:0px;
+	font-weight:normal;
+}
+
+#headingWMS{
+	font-family:typograph pro, century gothic;
+	font-weight:normal;
+	font-size:40px;
+}
+
+#headingCMCW{
+	font-family:agency fb;
+	font-size:30px;
+	text-transform:uppercase;
+}
+
+#navbar{
+	text-align:center;
+}
+
+#navbar ul{
+	display:inline;
+	list-style:none;
+	margin:0px 0px 0px 0px;
+	padding:21px 0px 7px 0px;
+	position:relative;
+	top:20px;
+	margin:0px;
+	border-top:solid 2px #91ccef;
+	font-size:0px;
+}
+
+#navbar ul li{
+	list-style:none;
+	display:inline;
+	font-size:14px;
+	margin:0px .5px 0px .5px;
+	padding:0px;
+}
+
+#navbar ul li a{
+	color:#91ccef;
+	font-size:120%;
+	font-weight:500;
+	text-transform:uppercase;
+	text-decoration:none;
+	text-align:center;
+	background-color:#136360;
+	margin:0px;
+	padding:3px;
+}
+
+#navbar ul li a:hover{
+	background-color:#91ccef;
+	color:#136360;
+}
+
+#navbar2{
+	text-align:center;
+	background-color:black;
+	position:relative;
+	top:30px;
+	height:25px;
+}
+
+#navbar2 ul{
+	display:inline;
+	list-style:none;
+	margin:0px 0px 0px 0px;
+	padding:21px 0px 7px 0px;
+	position:relative;
+	top:2px;
+	margin:0px;
+	font-size:0px;
+}
+
+#navbar2 ul li{
+	list-style:none;
+	display:inline;
+	font-size:14px;
+	margin:0px .5px 0px .5px;
+	padding:0px;
+}
+
+#navbar2 ul li a{
+	color:#989898;
+	font-size:100%;
+	font-weight:500;
+	text-transform:uppercase;
+	text-decoration:none;
+	text-align:center;
+	background-color:black;
+	margin:0px;
+	padding:3px;
+}
+
+#navbar2 ul li a:hover{
+	background-color:#989898;
+	color:black;
+}
+
+/* form body */
+
+h3{
+	margin:15px auto 15px auto;
+	text-align:center;
+	font-size:180%;
+	font-weight:normal;
+}
+
+#success {
+	background-color: #136360;
+	color: #ffffff;
+	margin: 20px 0px;
+}
+
+#success p {
+	padding: 10px;
+	text-align: center;
+}
+
+#error {
+	background-color: #ffabab;
+	border-radius:10px;
+	margin:0px 0px 0px 0px;
+}
+
+#error p {
+	padding: 5px;
+	color: red;
+	text-align: left;
+	font-weight: bold;
+}
+
+#infoHolder{
+	background-color:#136360;
+	border-radius:10px;
+	margin:5px 0px 5px 0px;
+}
+
+#infoHolder table{
+	margin:0px auto 0px auto;
+	padding:20px;
+}
+
+#infoHolder table tr td label{
+	text-align:right;
+	color:#ffffff;
+}
+
+#success table{
+	margin:0px auto 0px auto;
+	padding:20px;
+
+}
+
+#success table tr td label{
+	text-align:center;
+	color:#ffffff;
+}
+
+.textArea{
+	vertical-align:top;
+}
+
+input[type=text], input[type=date], select{
+	background-color:#e0e3df;
+	border:none;
+	border-radius:5px;
+	border-bottom:solid 1px #727572;
+	padding:5px;
+	box-sizing:border-box;
+	color:#454545;
+	height:30px;
+	width: 250px;
+	margin:2px 0px 2px 0px;
+	transition:0.4s ease-in;
+	
+}
+
+textarea{
+	background-color:#e0e3df;
+	border:none;
+	border-radius:5px;
+	border-bottom:solid 1px #727572;
+	padding:5px;
+	color:#454545;
+	margin:2px 0px 2px 0px;
+	transition:1s ease-in;
+	resize:none;
+	box-sizing:border-box;
+
+}
+
+input:focus{
+	border:solid 1px #727572;
+	background-color:#ffffff;
+}
+
+textarea:focus{
+	border:solid 1px #727572;
+	background-color:#ffffff;
+}
+
+/* td.col1{
+	text-align:right;
+} */
+
+
+/* footer */
+
+.footer{
+	background-color:black;
+}
+
+.footer p{
+	color:white;
+	font-size:12px;
+	margin:0px;
+	text-align:center;
+	
+}
+
+.blank_row
+{
+	height: 20px !important; /* overwrites any other rules */
+	/*background-color: #FFFFFF;*/
+}
+
+
+
+
+
+
+
