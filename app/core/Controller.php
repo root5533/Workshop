@@ -21,13 +21,13 @@ class Controller
     public function db_connect() {
         $domain = 'localhost';
         $db_username = 'root';
-        $db_password = '123';
+        $db_password = 'root';
         $db = 'cmc';
 
         $dbc = mysqli_connect($domain,$db_username,$db_password,$db)
         or die(mysqli_connect_error());
         return $dbc;
-//        echo "<h2>Connection Successful</h2>";
+
     }
 
     public function db_close($dbc) {
