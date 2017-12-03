@@ -2,10 +2,10 @@ function myfunction() {
     document.getElementById('title').innerHTML = Date();
 }
 
-function load_unseen_notification(view)
+function load_unseen_notification(view='')
 {
     $.ajax({
-        url:"fetch.php",
+        url:"localhost:8888/wshop/public/notificationCon/openJob",
         method:"POST",
         data:{view:view},
         dataType:"json",

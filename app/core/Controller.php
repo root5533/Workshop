@@ -5,7 +5,8 @@ class Controller
 {
     public function __construct()
     {
-
+        $GLOBALS['base_url'] = "/wshop/public";
+        @session_start();
     }
 
 

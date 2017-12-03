@@ -12,20 +12,20 @@ class loginCon extends Controller {
                 $password = $_POST['pwd'];
                 $db = $this->db_connect();
 
-                $query = "SELECT username,password,id FROM user WHERE username='$username' AND password='$password'";
+                $query = "SELECT * FROM user WHERE username='$username' AND password='$password'";
                 $result = mysqli_query($db,$query);
                 if(mysqli_num_rows($result) > 0) {
                     $row = $result->fetch_assoc();
                     $type = $row['type'];
                     $_SESSION['user'] = $row['username'];
                     $_SESSION['id'] = $row['id'];
-                    $_SESSION['type'] = $row['type'];
-                    $this->view('template/head');
+                    $_SESSION['type'] = $type;
+                    $base = $GLOBALS['base_url'];
                     if ($type == "SO") {
-                        $this->view('SO/job');
+                        header("location: $base/home/load_view/job");
                     }
                     else {
-                        $this->view('EN/assign');
+                        header("location: $base/home/load_view/assign");
                     }
                     return;
                 }
@@ -40,4 +40,12 @@ class loginCon extends Controller {
         }
 
     }
+
+    public function signout() {
+        session_destroy();
+        $base = $GLOBALS['base_url'];
+        header("location: $base/home");
+    }
+
+
 }

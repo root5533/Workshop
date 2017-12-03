@@ -1,6 +1,6 @@
 <?php
 
-$GLOBALS['base_url'] = "/wshop/public";
+//$GLOBALS['base_url'] = "/wshop/public";
 
 //session_start();
 
@@ -28,7 +28,7 @@ echo
 
 <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js'></script>
 
-<script src='../../../public/assets/notif1.js' type='text/javascript'></script>
+<script src='" . $GLOBALS['base_url'] . "/assets/notif1.js' type='text/javascript'></script>
 
 <style>
 
