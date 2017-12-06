@@ -8,7 +8,6 @@
 
 class home extends Controller
 {
-
     public function index() {
         if (isset($_SESSION['user'])) {
             $base = $GLOBALS['base_url'];
@@ -51,8 +50,12 @@ class home extends Controller
                 $this->view('EN/assign');
             }
         }
-    }
 
+        if ($view == 'SO') {
+            $this->view('system_operator/add_jobs');
+        }
+
+    }
     private function loginForm($error) {
         $this->view('template/head');
         $this->view('login','',$error);

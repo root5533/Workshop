@@ -1,13 +1,4 @@
 
-
-<!--    <div class="w3-container">-->
-<!--        <h2><b></b></h2>-->
-<!--        --><?php
-//        if (isset($data['message'])) {
-//            echo "<p style='color: green;'>" . $data['message'] . "</p>";
-//        } ?>
-<!--    </div>-->
-
     <div class="w3-row-padding">
         <div class="w3-container w3-margin-bottom w3-padding-small">
             <div class="col-md-9 col-sm-12">
@@ -53,12 +44,7 @@
                 </ul>
             </div>
         </div>
-
-
-
-<!--    --><?php //require_once 'footer.php'; ?>
-
-</div>
+    </div>
 </body>
 
 
