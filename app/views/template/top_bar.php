@@ -1,39 +1,24 @@
-<div class='w3-overlay w3-hide-large w3-animate-opacity' onclick='w3_close()' style='cursor:pointer' title='close side menu' id='myOverlay'></div>
+<div class='w3-hide-large w3-animate-opacity' onclick='w3_close()' style='cursor:pointer' title='close side menu' id='myOverlay'></div>
 
-<div class='w3-main' style='margin-left:300px'>
+<div class='w3-main' style='margin-left:200px'>
 
 <header id='portfolio'>
-
-    <a href='#'><img src='/w3images/avatar_g2.jpg' style='width:65px;' class='w3-circle w3-right w3-margin w3-hide-large w3-hover-opacity'></a>
-
-    <span class='w3-button w3-hide-large w3-xxlarge w3-hover-text-grey' onclick='w3_open()'><i class='fa fa-bars'></i></span>
-
-    <div class='w3-container' style='padding-top: 10px;'>
-        <div class='row'>
-            <div class='col-sm-10'>
-                <ul style='font-size: xx-large;vertical-align: middle;font-weight: bold;list-style-type: none;'>
-                    <li><?php echo $_SESSION['user']; ?></li>
-                    <li style="font-size: large"> <?php echo $_SESSION['type']; ?> </li>
-                </ul>
+    <span class='w3-button w3-hide-large w3-large w3-hover-text-grey' onclick='w3_open()'><i class='fa fa-bars'></i></span>
+    <div class='w3-container w3-teal' style='padding-top: 10px;'>
+        <div class='row' style="line-height: 50px; vertical-align: bottom;">
+            <div class="col-sm-10 w3-padding-large">
+                <h2 style="margin: 0px;"><i class="fa fa-user"></i> <?php echo $_SESSION['user'] . "(" . $_SESSION['type'] . ")" ?></h2>
             </div>
-            <div class='col-sm-2'>
-                <a href='<?php echo $GLOBALS['base_url']; ?>/loginCon/signout' style='text-decoration: none;'>
-                    <span style='font-size: large;vertical-align: middle;line-height: 60px;font-weight: bold;color: black;'>
-                        Sign Out
-                    </span>
-                </a>
-                <ul class='nav navbar-nav navbar-right'>
-                    <li class='dropdown'>
-                        <a href='#' class='dropdown-toggle' data-toggle='dropdown' style='margin: auto'>
-                        <span class='label label-pill label-danger count' style=''></span>
-                        <span class='glyphicon glyphicon-envelope' style='font-size:x-large;vertical-align: middle;color: black;'></span></a>
-                    <ul class='dropdown-menu'></ul>
-                    </li>
-                </ul>
+            <div class="col-sm-2 w3-padding-large">
+                <h4 style="margin-bottom: 0px;">
+                    <a href="<?php echo $GLOBALS['base_url']; ?>/loginCon/signout" style="text-decoration: none;color: white;">
+                        <i class="fa fa-user-circle"></i> Sign Out
+                    </a></h4>
             </div>
         </div>
     </div>
 </header>
+
     
     
     

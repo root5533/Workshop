@@ -1,11 +1,3 @@
-<?php
-
-//$GLOBALS['base_url'] = "/wshop/public";
-
-//session_start();
-
-echo 
-"
 
 <!DOCTYPE html>
 <html>
@@ -28,16 +20,15 @@ echo
 
 <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js'></script>
 
-<script src='" . $GLOBALS['base_url'] . "/assets/notif1.js' type='text/javascript'></script>
+<script src='<?php echo $GLOBALS['base_url']; ?>/assets/notif1.js' type='text/javascript'></script>
+
+<script src='<?php echo $GLOBALS['base_url']; ?>/assets/custom.css' type='text/javascript'></script>
+
+<script src='<?php echo $GLOBALS['base_url']; ?>/assets/dropdown.js' type='text/javascript'></script>
 
 <style>
-
     body,h1,h2,h3,h4,h5,h6 {font-family: 'Raleway', sans-serif}
-    
 </style>
 
-<body class='w3-light-grey w3-content' style='max-width:1600px'>
+<body>
 
-";
-
-?>

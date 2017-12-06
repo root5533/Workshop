@@ -2,24 +2,21 @@
 
 <html>
 
-    <div class="w3-container w3-padding-large">
-        <h2 id="title"></h2>
-        <button type="button" onclick="myfunction()">
-            Click me to display Date and Time.
-        </button>
-
-        <?php
-        if (isset($data['message'])) {
-            echo "<h4 style='color: green;'>" . $data['message'] . "</h4>";
-        } ?>
-    </div>
+<!--    <div class="w3-container w3-padding-large">-->
+<!--        <h2 id="title"></h2>-->
+<!---->
+<!--        --><?php
+//        if (isset($data['message'])) {
+//            echo "<h4 style='color: green;'>" . $data['message'] . "</h4>";
+//        } ?>
+<!--    </div>-->
 
     <div class="w3-row-padding">
-        <div class="w3-container w3-margin-bottom">
-            <div class="w3-container w3-white w3-padding-large">
-                <div class="row-content">
-<!--                    <h3>Driver Registration</h3>-->
-                    <div class="col-sm-8" style="padding-top: 10px;">
+        <div class="w3-container w3-margin-bottom w3-padding-small">
+            <div class="col-md-9 col-sm-12">
+
+                <div class="col-sm-10">
+                    <div id="openJob" class="w3-container job">
                         <form action=<?php echo $GLOBALS['base_url'] . "/maintenance/driver_registration" ?> method="post">
                             <h3>Assign Supervisor to Open Job</h3>
                             <div class="form-group">
@@ -38,8 +35,17 @@
                     </div>
                 </div>
             </div>
+            <div class="col-md-3 col-sm-12 w3-border-left"  style="min-height: 800px;">
+                <button type="button" class="w3-button w3-block" id="notifButton">
+                    <h3 style="margin: 0px;text-align: center;">
+                        Notification
+                        <span class="label label-pill label-danger count" style="border-radius:10px;margin-left: 5px;" id="count"></span>
+                    </h3>
+                </button>
+                <ul class="w3-ul w3-large w3-hoverable" style="margin-top: 10px; display: none;" id="notification">
+                </ul>
+            </div>
         </div>
-    </div>
 
 <!--    --><?php //require_once 'footer.php'; ?>
 
@@ -47,55 +53,16 @@
 </body>
 
 <script>
-    load_unseen_notification();
 
-//    $('#comment_form').on('submit', function(event){
-//        event.preventDefault();
-//        if($('#subject').val() != '' && $('#comment').val() != '')
-//        {
-//            var form_data = $(this).serialize();
-//            $.ajax({
-//                url:"insert.php",
-//                method:"POST",
-//                data:form_data,
-//                success:function(data)
-//                {
-//                    $('#comment_form')[0].reset();
-//                    load_unseen_notification();
-//                }
-//            });
-//        }
-//        else
-//        {
-//            alert("Both Fields are Required");
-//        }
-//    });
+    document.getElementById("notifButton").addEventListener("click", loadDoc);
 
-    $(document).on('click', '.dropdown-toggle', function(){
-        $('.count').html('');
-        load_unseen_notification('yes');
-    });
+    load_notification();
 
-    setInterval(function(){
-        load_unseen_notification();;
-    }, 5000);
+    window.setInterval(test, 5000);
 
-    });
 </script>
 
 
-<script>
-    // Script to open and close sidebar
-    function w3_open() {
-        document.getElementById("mySidebar").style.display = "block";
-        document.getElementById("myOverlay").style.display = "block";
-    }
-
-    function w3_close() {
-        document.getElementById("mySidebar").style.display = "none";
-        document.getElementById("myOverlay").style.display = "none";
-    }
-</script>
 
 
 </html>
