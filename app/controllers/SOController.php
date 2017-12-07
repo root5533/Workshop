@@ -7,7 +7,7 @@ class SOController extends Controller
     {
         $this->view('template/head');
         $this->view('system_operator/side_bar');
-        $this->view('template/top_bar');
+        $this->view('system_operator/top_bar');
         $this->view('system_operator/add_jobs');
     }
 
@@ -15,7 +15,7 @@ class SOController extends Controller
     {
         $this->view('template/head');
         $this->view('system_operator/side_bar');
-        $this->view('template/top_bar');
+        $this->view('system_operator/top_bar');
 
         if ($view == 'add_jobs') {
             $this->view('system_operator/add_jobs');

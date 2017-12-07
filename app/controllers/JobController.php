@@ -59,17 +59,16 @@ class JobController extends Controller{
             );
             $result = $model->so_insert($data);
             $data['display'] = "Job successfully created";
-            $this->loadView($data);
+            header('location: ' . $GLOBALS['base_url'] . '/SOController/load_view/add_job?msg=Job%20successfully%20created');
         }
         else {
             $this->loadView();
         }
-
     }
 
     public function view_job_entry() {
 
-        if(isset($_POST['search'])) {
+        if(isset($_POST['submit'])) {
             $dbc = $this->db_connect();
             $search = trim($_POST['search']);
             $search_type = trim($_POST['search_type']);
@@ -81,9 +80,45 @@ class JobController extends Controller{
 //            $supervisor = trim($_POST['supervisor']);
 //            $confirmation = trim($_POST['confirmation']);
 
-            if (empty($id_vehicle)) {
-                $error['id_vehicle_error'] = "*Please fill the vehicle registration no";
+            function validateDate($date, $format = 'Y-m-d H:i:s')
+            {
+                $d = DateTime::createFromFormat($format, $date);
+                return $d && $d->format($format) == $date;
             }
+
+            if(isset($_POST['search'])){
+                switch ($search_type) {
+                    case 'id':
+                        if(is_numeric($search)){
+                            break;
+                        }elseif (empty($search)){
+                            break;
+                        }else{
+                            $error['search_error']="*Enter a number";
+                        };
+                        break;
+                    case 'id_vehicle':
+                        if(is_numeric($search)){ $error['search_error']="*Enter a valid vehicle registration no";};
+                        break;
+                    case 'date':
+                        if(validateDate($search, 'd/m/Y')){
+                            break;
+                        }elseif (validateDate($search, 'Y-m-d')){
+                            break;
+                        }elseif (validateDate($search, 'Y/m/d')){
+                            break;
+                        }else{
+                            $error['search_error']="*Enter a valid date";
+                        };
+                        break;
+                    case 'job_applicant':
+                        if(is_numeric($search)){ $error['search_error']="*Enter a name";};
+                        break;
+                    default:
+                        break;
+                }
+            }
+
             if (isset($error) == FALSE) {
                 $model = $this->model('JobModel');
                 $data = array(
@@ -97,37 +132,44 @@ class JobController extends Controller{
 //                    'confirmation' => $confirmation
                 );
 
-                $result = $model->so_view($data);
+                $data = $model->so_view($data);
+
+                if (is_null($data)) {
+                    $data = array('display' => 'No match found!');
+                }
+
+                $this->view('system_operator/head');
+                $this->view('system_operator/side_bar');
+                $this->view('system_operator/top_bar');
+                $this->view('system_operator/view_jobs',$data,[]);
 //                $this->view("maintenance/test", $data , []);
 
-                if ($result == 1) {
-                    $data = array('message' => 'Vehicle Registration Successful');
-                }
-                elseif ($result == 0) {
-                    $data = array('message' => 'Vehicle is already registered');
-                }
-                elseif ($result == 2) {
-                    $data = array('message' => 'Problem updating vehicle database');
-                }
-                elseif ($result == 3) {
-                    $data = array('message' => 'The driver and vehicle both do not exist');
-                }
-                elseif ($result == 4) {
-                    $data = array('message' => 'The driver does not exist');
-                }
-                elseif ($result == 5) {
-                    $data = array('message' => 'The vehicle does not exist');
-                }
-                elseif (is_array($result)){
-//                    $data = array('message' => 'incoming');
-                    $data = $result;
-                }
-                $this->view('system_operator/view_jobs',$data, []);
+
+//                elseif ($result == 0) {
+//                    $data = array('message' => 'Vehicle is already registered');
+//                }
+//                elseif ($result == 2) {
+//                    $data = array('message' => 'Problem updating vehicle database');
+//                }
+//                elseif ($result == 3) {
+//                    $data = array('message' => 'The driver and vehicle both do not exist');
+//                }
+//                elseif ($result == 4) {
+//                    $data = array('message' => 'The driver does not exist');
+//                }
+//                elseif ($result == 5) {
+//                    $data = array('message' => 'The vehicle does not exist');
+//                }
+
+
+
+
+
             }
             else {
                 $data = array(
                     'search' => $search,
-                    'search_type' => $search_type
+                    'search_type' => $search_type,
 //                    'id_vehicle' => $id_vehicle,
 //                    'date' => $date,
 //                    'job_applicant' => $job_applicant,
@@ -135,11 +177,18 @@ class JobController extends Controller{
 //                    'supervisor' => $supervisor,
 //                    'confirmation' => $confirmation
                 );
-                $this->view('system_operator/view_jobs', $data, $error);
+
+                $this->view('system_operator/head');
+                $this->view('system_operator/side_bar');
+                $this->view('system_operator/top_bar');
+                $this->view('system_operator/view_jobs', [], $error);
             }
             $this->db_close($dbc);
         }
         else {
+            $this->view('system_operator/head');
+            $this->view('system_operator/side_bar');
+            $this->view('system_operator/top_bar');
             $this->view('system_operator/view_jobs');
         }
 
@@ -148,7 +197,7 @@ class JobController extends Controller{
     private function loadView($data=[],$error=[]) {
         $this->view('template/head');
         $this->view('system_operator/side_bar');
-        $this->view('template/top_bar');
+        $this->view('system_operator/top_bar');
         $this->view('system_operator/add_jobs', $data, $error);
     }
 

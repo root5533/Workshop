@@ -38,7 +38,7 @@
                                 <input type="hidden" value="<?php echo $data['date']; ?>" name="date">
                                 <input type="hidden" value="<?php echo $data['job_applicant']; ?>" name="job_applicant">
                                 <button type="button" onclick="document.getElementById('idModal').style.display='none'" class="w3-button w3-teal">Back to form</button>
-                                <button type="submit" class="w3-button w3-teal" style="float: right;">Submit</button>
+                                <button type="submit" class="w3-button w3-teal" style="float: right;" name="submit">Submit</button>
                             </form>
                         </div>
                     </div>
@@ -56,10 +56,9 @@
 
         <?php
         //display result after confirmation
-        if(isset($data['display'])) { ?>
-
+        if(isset($_GET['msg'])) { ?>
             <div class="w3-panel w3-blue">
-                <p><h4><?php echo $data['display']; ?></h4></p>
+                <p><h4><?php echo $_GET['msg'] ?></h4></p>
             </div>
 
         <?php }
@@ -73,7 +72,7 @@
             <div class="w3-container w3-white w3-padding-large">
                 <div class="row-content">
                     <div class="col-md-9 col-sm-12">
-                        <div class="w3-container w3-teal"> <h3>Job Entry Form</h3> </div>
+                        <div class="w3-container w3-teal"> <h3>New Job Entry</h3> </div>
                         <div class="col-sm-8" style="padding-top: 10px;">
                             <form action="<?php echo $GLOBALS['base_url']; ?>/JobController/open_job_entry" method="post">
                                 <div class="form-group">

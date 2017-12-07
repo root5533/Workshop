@@ -5,8 +5,8 @@
     <a href="<?php echo $GLOBALS['base_url']; ?>/SOController/load_view/add_jobs" class="w3-bar-item w3-button">Add Jobs</a>
     <a href="<?php echo $GLOBALS['base_url']; ?>/SOController/load_view/view_jobs" class="w3-bar-item w3-button">View Jobs</a>
     <a href="<?php echo $GLOBALS['base_url']; ?>/SOController/load_view/vehicle_entry_records" class="w3-bar-item w3-button">Vehicle Entry Records</a>
-    <a href="<?php echo $GLOBALS['base_url']; ?>/SOController/load_view/add_complains" class="w3-bar-item w3-button">Add Complains</a>
-    <a href="#" class="w3-bar-item w3-button">View Complains</a>
+<!--    <a href="--><?php //echo $GLOBALS['base_url']; ?><!--/SOController/load_view/add_complains" class="w3-bar-item w3-button">Add Complains</a>-->
+<!--    <a href="#" class="w3-bar-item w3-button">View Complains</a>-->
     <a href="<?php echo $GLOBALS['base_url']; ?>/SOController/load_view/add_vehicle" class="w3-bar-item w3-button">Add Vehicle</a>
     <a href="<?php echo $GLOBALS['base_url']; ?>/SOController/load_view/add_driver" class="w3-bar-item w3-button">Add Driver</a>
 

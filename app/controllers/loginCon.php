@@ -22,10 +22,10 @@ class loginCon extends Controller {
                     $_SESSION['type'] = $type;
                     $base = $GLOBALS['base_url'];
                     if ($type == "SO") {
-                        header("location: $base/home/load_view/job");
+                        header("location: $base/SOController/");
                     }
-                    else {
-                        header("location: $base/home/load_view/assign");
+                    if ($type == "EN") {
+                        header("location: $base/ENController");
                     }
                     return;
                 }
