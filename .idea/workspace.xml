@@ -2,14 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="148fc998-9203-4492-9caa-80c98e27304d" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/DriverController.php" afterPath="$PROJECT_DIR$/app/controllers/DriverController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/VehicleController.php" afterPath="$PROJECT_DIR$/app/controllers/VehicleController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/DriverModel.php" afterPath="$PROJECT_DIR$/app/models/DriverModel.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/system_operator/add_complains.php" afterPath="$PROJECT_DIR$/app/views/system_operator/add_complains.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/SO/job.php" afterPath="$PROJECT_DIR$/app/views/SO/job.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/system_operator/add_driver.php" afterPath="$PROJECT_DIR$/app/views/system_operator/add_driver.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/system_operator/head.php" afterPath="$PROJECT_DIR$/app/views/system_operator/head.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/template/head.php" afterPath="$PROJECT_DIR$/app/views/template/head.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/template/top_bar.php" afterPath="$PROJECT_DIR$/app/views/template/top_bar.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/system_operator/add_vehicle.php" afterPath="$PROJECT_DIR$/app/views/system_operator/add_vehicle.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/custom.css" afterPath="$PROJECT_DIR$/public/assets/custom.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/notif1.js" afterPath="$PROJECT_DIR$/public/assets/notif1.js" />
     </list>
     <ignored path="Workshopv2.iws" />
@@ -32,8 +30,8 @@
       <file leaf-file-name="notif1.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/assets/notif1.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="537">
-              <caret line="58" column="33" lean-forward="true" selection-start-line="58" selection-start-column="33" selection-end-line="58" selection-end-column="33" />
+            <state relative-caret-position="240">
+              <caret line="16" column="33" lean-forward="false" selection-start-line="16" selection-start-column="33" selection-end-line="16" selection-end-column="33" />
               <folding />
             </state>
           </provider>
@@ -42,7 +40,7 @@
       <file leaf-file-name="add_complains.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/system_operator/add_complains.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="283">
+            <state relative-caret-position="282">
               <caret line="93" column="8" lean-forward="false" selection-start-line="93" selection-start-column="8" selection-end-line="93" selection-end-column="8" />
               <folding>
                 <marker date="1512613902000" expanded="true" signature="1368:1384" ph="..." />
@@ -58,11 +56,9 @@
       <file leaf-file-name="add_vehicle.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/system_operator/add_vehicle.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="46" lean-forward="false" selection-start-line="5" selection-start-column="46" selection-end-line="5" selection-end-column="46" />
-              <folding>
-                <element signature="n#style#0;n#button#1;n#div#4;n#form#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
-              </folding>
+            <state relative-caret-position="111">
+              <caret line="46" column="77" lean-forward="false" selection-start-line="46" selection-start-column="77" selection-end-line="46" selection-end-column="77" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -70,8 +66,18 @@
       <file leaf-file-name="DriverController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/DriverController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="672">
-              <caret line="136" column="50" lean-forward="false" selection-start-line="136" selection-start-column="35" selection-end-line="136" selection-end-column="50" />
+            <state relative-caret-position="2070">
+              <caret line="138" column="49" lean-forward="true" selection-start-line="138" selection-start-column="49" selection-end-line="138" selection-end-column="49" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SOController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/controllers/SOController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="225">
+              <caret line="15" column="8" lean-forward="false" selection-start-line="15" selection-start-column="8" selection-end-line="17" selection-end-column="40" />
               <folding />
             </state>
           </provider>
@@ -90,18 +96,8 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="custom.css" pinned="false" current-in-tab="false">
+      <file leaf-file-name="custom.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/assets/custom.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="1" column="33" lean-forward="false" selection-start-line="1" selection-start-column="33" selection-end-line="1" selection-end-column="33" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="w3.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/assets/w3.css">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -113,41 +109,18 @@
       <file leaf-file-name="add_driver.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/system_operator/add_driver.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="358">
-              <caret line="255" column="8" lean-forward="false" selection-start-line="255" selection-start-column="8" selection-end-line="255" selection-end-column="8" />
+            <state relative-caret-position="231">
+              <caret line="93" column="77" lean-forward="false" selection-start-line="93" selection-start-column="77" selection-end-line="93" selection-end-column="77" />
               <folding>
-                <marker date="1512613902000" expanded="true" signature="2879:2916" ph="..." />
-                <marker date="1512613902000" expanded="true" signature="4381:4397" ph="..." />
-                <marker date="1512613902000" expanded="true" signature="9241:9257" ph="..." />
-                <marker date="1512613902000" expanded="true" signature="13945:13961" ph="..." />
-                <marker date="1512613902000" expanded="true" signature="14199:14215" ph="..." />
-                <marker date="1512613902000" expanded="true" signature="14466:14482" ph="..." />
-                <marker date="1512613902000" expanded="true" signature="15854:15870" ph="..." />
-                <marker date="1512613902000" expanded="true" signature="17089:17105" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="top_bar.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/template/top_bar.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="10" column="31" lean-forward="false" selection-start-line="10" selection-start-column="31" selection-end-line="10" selection-end-column="31" />
-              <folding>
-                <marker date="1512611660000" expanded="true" signature="398:1117" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="head.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/views/system_operator/head.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="28" column="6" lean-forward="true" selection-start-line="28" selection-start-column="6" selection-end-line="28" selection-end-column="6" />
-              <folding>
-                <marker date="1512614836000" expanded="true" signature="797:799" ph="..." />
+                <element signature="n#style#0;n#table#0;n#div#2;n#form#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+                <marker date="1512625477000" expanded="true" signature="2879:2916" ph="..." />
+                <marker date="1512625477000" expanded="true" signature="4381:4397" ph="..." />
+                <marker date="1512625477000" expanded="true" signature="9278:9294" ph="..." />
+                <marker date="1512625477000" expanded="true" signature="13720:13736" ph="..." />
+                <marker date="1512625477000" expanded="true" signature="13974:13990" ph="..." />
+                <marker date="1512625477000" expanded="true" signature="14241:14257" ph="..." />
+                <marker date="1512625477000" expanded="true" signature="15629:15645" ph="..." />
+                <marker date="1512625477000" expanded="true" signature="16864:16880" ph="..." />
               </folding>
             </state>
           </provider>
@@ -175,6 +148,7 @@
       <find>submit</find>
       <find>$base_url</find>
       <find>vehicle ty</find>
+      <find>open</find>
     </findStrings>
     <replaceStrings>
       <replace>'</replace>
@@ -212,20 +186,21 @@
         <option value="$PROJECT_DIR$/app/models/VehicleModel.php" />
         <option value="$PROJECT_DIR$/app/controllers/SOController.php" />
         <option value="$PROJECT_DIR$/app/views/system_operator/side_bar.php" />
-        <option value="$PROJECT_DIR$/app/views/SO/job.php" />
-        <option value="$PROJECT_DIR$/public/assets/custom.css" />
         <option value="$PROJECT_DIR$/app/controllers/ComplainController.php" />
         <option value="$PROJECT_DIR$/app/models/ComplainModel.php" />
         <option value="$PROJECT_DIR$/app/controllers/VehicleController.php" />
         <option value="$PROJECT_DIR$/app/views/template/head.php" />
         <option value="$PROJECT_DIR$/app/views/template/top_bar.php" />
-        <option value="$PROJECT_DIR$/public/assets/notif1.js" />
-        <option value="$PROJECT_DIR$/app/views/system_operator/add_driver.php" />
         <option value="$PROJECT_DIR$/app/views/system_operator/add_complains.php" />
         <option value="$PROJECT_DIR$/app/views/system_operator/head.php" />
         <option value="$PROJECT_DIR$/app/models/DriverModel.php" />
-        <option value="$PROJECT_DIR$/app/controllers/DriverController.php" />
+        <option value="$PROJECT_DIR$/app/views/SO/job.php" />
+        <option value="$PROJECT_DIR$/public/assets/notif1.js" />
         <option value="$PROJECT_DIR$/app/views/system_operator/add_vehicle.php" />
+        <option value="$PROJECT_DIR$/app/views/system_operator/add_driver.php" />
+        <option value="$PROJECT_DIR$/app/controllers/DriverController.php" />
+        <option value="$PROJECT_DIR$/app/views/system_operator/add_jobs.php" />
+        <option value="$PROJECT_DIR$/public/assets/custom.css" />
       </list>
     </option>
   </component>
@@ -244,10 +219,9 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1382" />
-    <option name="height" value="754" />
+    <option name="y" value="22" />
+    <option name="width" value="1668" />
+    <option name="height" value="970" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="1" id="Add" />
@@ -270,7 +244,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -364,6 +337,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scratches" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -400,45 +374,36 @@
       <workItem from="1512191913411" duration="272000" />
       <workItem from="1512192532155" duration="9776000" />
       <workItem from="1512205077320" duration="8037000" />
+      <workItem from="1512618649099" duration="5922000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="93158000" />
+    <option name="totallyTimeSpent" value="99179000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="22" width="1680" height="971" extended-state="6" />
+    <frame x="0" y="22" width="1680" height="970" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16607143" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17559524" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32925472" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16614583" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32925472" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -483,14 +448,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/maintenance.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/maintenance.php" />
     <entry file="file://$PROJECT_DIR$/app/core/app.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="294">
@@ -585,7 +543,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
           <caret line="3" column="25" lean-forward="false" selection-start-line="3" selection-start-column="25" selection-end-line="3" selection-end-column="25" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -605,14 +562,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/maintenance.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="4" lean-forward="true" selection-start-line="16" selection-start-column="4" selection-end-line="18" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/maintenance.php" />
     <entry file="file://$PROJECT_DIR$/app/models/vehicle_model.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -662,14 +612,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/assets/dropdown.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="23" column="61" lean-forward="true" selection-start-line="23" selection-start-column="61" selection-end-line="23" selection-end-column="61" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/public/assets/dropdown.js" />
     <entry file="file://$PROJECT_DIR$/app/controllers/notificationCon.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="570">
@@ -690,10 +633,6 @@
         <state relative-caret-position="627">
           <caret line="56" column="78" lean-forward="false" selection-start-line="56" selection-start-column="78" selection-end-line="56" selection-end-column="78" />
           <folding>
-            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#h3#0;n#button#0;n#div#1;n#div#0;n#div#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#h3#0;n#button#0;n#div#1;n#div#0;n#div#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#ul#0;n#div#1;n#div#0;n#div#0;n#html#0;n#!!top" expanded="true" />
             <marker date="1512469707000" expanded="true" signature="212:225" ph="..." />
           </folding>
         </state>
@@ -758,31 +697,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/system_operator/add_jobs.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1512496952000" expanded="true" signature="571:584" ph="..." />
-            <marker date="1512496952000" expanded="true" signature="4677:4693" ph="..." />
-            <marker date="1512496952000" expanded="true" signature="5382:5398" ph="..." />
-            <marker date="1512496952000" expanded="true" signature="6089:6105" ph="..." />
-            <marker date="1512496952000" expanded="true" signature="6773:6789" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/SO/job.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="660">
-          <caret line="44" column="18" lean-forward="true" selection-start-line="44" selection-start-column="18" selection-end-line="44" selection-end-column="18" />
-          <folding>
-            <marker date="1512565305000" expanded="false" signature="466:477" ph="..." />
-            <marker date="1512565305000" expanded="false" signature="612:623" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/system_operator/side_bar.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
@@ -811,14 +725,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="7" column="36" lean-forward="false" selection-start-line="7" selection-start-column="36" selection-end-line="7" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/SOController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="8" lean-forward="true" selection-start-line="15" selection-start-column="8" selection-end-line="17" selection-end-column="40" />
           <folding />
         </state>
       </provider>
@@ -868,50 +774,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/assets/w3.css">
+    <entry file="file://$PROJECT_DIR$/app/views/SO/job.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/assets/custom.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="33" lean-forward="false" selection-start-line="1" selection-start-column="33" selection-end-line="1" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/assets/notif1.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="537">
-          <caret line="58" column="33" lean-forward="true" selection-start-line="58" selection-start-column="33" selection-end-line="58" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/system_operator/add_driver.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="358">
-          <caret line="255" column="8" lean-forward="false" selection-start-line="255" selection-start-column="8" selection-end-line="255" selection-end-column="8" />
+        <state relative-caret-position="-1096">
+          <caret line="18" column="80" lean-forward="true" selection-start-line="18" selection-start-column="80" selection-end-line="18" selection-end-column="80" />
           <folding>
-            <marker date="1512613902000" expanded="true" signature="2879:2916" ph="..." />
-            <marker date="1512613902000" expanded="true" signature="4381:4397" ph="..." />
-            <marker date="1512613902000" expanded="true" signature="9241:9257" ph="..." />
-            <marker date="1512613902000" expanded="true" signature="13945:13961" ph="..." />
-            <marker date="1512613902000" expanded="true" signature="14199:14215" ph="..." />
-            <marker date="1512613902000" expanded="true" signature="14466:14482" ph="..." />
-            <marker date="1512613902000" expanded="true" signature="15854:15870" ph="..." />
-            <marker date="1512613902000" expanded="true" signature="17089:17105" ph="..." />
+            <marker date="1512619540000" expanded="false" signature="466:477" ph="..." />
+            <marker date="1512619540000" expanded="false" signature="612:623" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/system_operator/add_complains.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="283">
+        <state relative-caret-position="282">
           <caret line="93" column="8" lean-forward="false" selection-start-line="93" selection-start-column="8" selection-end-line="93" selection-end-column="8" />
           <folding>
             <marker date="1512613902000" expanded="true" signature="1368:1384" ph="..." />
@@ -920,6 +796,14 @@
             <marker date="1512613902000" expanded="true" signature="4024:4040" ph="..." />
             <marker date="1512613902000" expanded="true" signature="4752:4768" ph="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/assets/notif1.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="33" lean-forward="false" selection-start-line="16" selection-start-column="33" selection-end-line="16" selection-end-column="33" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -934,21 +818,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/DriverController.php">
+    <entry file="file://$PROJECT_DIR$/public/assets/w3.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="672">
-          <caret line="136" column="50" lean-forward="false" selection-start-line="136" selection-start-column="35" selection-end-line="136" selection-end-column="50" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/system_operator/add_vehicle.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="46" lean-forward="false" selection-start-line="5" selection-start-column="46" selection-end-line="5" selection-end-column="46" />
-          <folding>
-            <element signature="n#style#0;n#button#1;n#div#4;n#form#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -959,6 +833,70 @@
           <folding>
             <marker date="1512614836000" expanded="true" signature="797:799" ph="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/system_operator/add_vehicle.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="111">
+          <caret line="46" column="77" lean-forward="false" selection-start-line="46" selection-start-column="77" selection-end-line="46" selection-end-column="77" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/system_operator/add_driver.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="93" column="77" lean-forward="false" selection-start-line="93" selection-start-column="77" selection-end-line="93" selection-end-column="77" />
+          <folding>
+            <element signature="n#style#0;n#table#0;n#div#2;n#form#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <marker date="1512625477000" expanded="true" signature="2879:2916" ph="..." />
+            <marker date="1512625477000" expanded="true" signature="4381:4397" ph="..." />
+            <marker date="1512625477000" expanded="true" signature="9278:9294" ph="..." />
+            <marker date="1512625477000" expanded="true" signature="13720:13736" ph="..." />
+            <marker date="1512625477000" expanded="true" signature="13974:13990" ph="..." />
+            <marker date="1512625477000" expanded="true" signature="14241:14257" ph="..." />
+            <marker date="1512625477000" expanded="true" signature="15629:15645" ph="..." />
+            <marker date="1512625477000" expanded="true" signature="16864:16880" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/SOController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="8" lean-forward="false" selection-start-line="15" selection-start-column="8" selection-end-line="17" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/system_operator/add_jobs.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1512626145000" expanded="true" signature="175:188" ph="..." />
+            <marker date="1512626145000" expanded="true" signature="4281:4297" ph="..." />
+            <marker date="1512626145000" expanded="true" signature="4986:5002" ph="..." />
+            <marker date="1512626145000" expanded="true" signature="5693:5709" ph="..." />
+            <marker date="1512626145000" expanded="true" signature="6377:6393" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/DriverController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2070">
+          <caret line="138" column="49" lean-forward="true" selection-start-line="138" selection-start-column="49" selection-end-line="138" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/assets/custom.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

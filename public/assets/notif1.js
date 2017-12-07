@@ -59,6 +59,18 @@ function hideNotif() {
         x.style.display = "none";
     }
 }
+
+function validatePassKey(tb) {
+    console.log("pass key");
+    var variable = tb.id;
+    var val = tb.value;
+    var name = variable.slice(0,-1);
+    var number = variable.slice(-1);
+    if (variable.length >= 1) {
+        var nextElement = name + (+number+1);
+        document.getElementById(nextElement).focus();
+    }
+}
 // Script to open and close sidebar
 function w3_open() {
     document.getElementById("mySidebar").style.display = "block";

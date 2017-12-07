@@ -91,7 +91,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="nic">NIC</label>
-                                    <table>
+                                    <table class="w3-table" style="width: 90%;">
                                         <tr>
                                             <td>
                                                 <input type="text" class="form-control" id="nic_1" placeholder="" name="nic_1" size="1" maxlength="1" onkeyup="ValidatePassKey(this)"
@@ -142,42 +142,42 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="license_no">License No</label>
-                                    <table>
+                                    <table class="w3-table" style="width: 80%">
                                         <tr>
                                             <td>
-                                                <input type="text" class="form-control" id="license_no_1" placeholder="" name="license_no_1" size="1" maxlength="1" onkeyup="ValidatePassKey(this)"
+                                                <input type="text" class="form-control" id="license_no_1" placeholder="" name="license_no_1" size="1" maxlength="1"
                                                     <?php if (isset($data['license_no_1'])) {echo "value='"; print_r($data['license_no_1']); echo "'";} ?>>
                                             </td>
                                             <td>
-                                                <input type="text" class="form-control" id="license_no_2" placeholder="" name="license_no_2" size="1" maxlength="1" onkeypress="ValidatePassKey(this)"
+                                                <input type="text" class="form-control" id="license_no_2" placeholder="" name="license_no_2" size="1" maxlength="1"
                                                     <?php if (isset($data['license_no_2'])) {echo "value='"; print_r($data['license_no_2']); echo "'";} ?>>
                                             </td>
                                             <td>
-                                                <input type="text" class="form-control" id="license_no_3" placeholder="" name="license_no_3" size="1" maxlength="1" onchange="ValidatePassKey(this)"
+                                                <input type="text" class="form-control" id="license_no_3" placeholder="" name="license_no_3" size="1" maxlength="1"
                                                     <?php if (isset($data['license_no_3'])) {echo "value='"; print_r($data['license_no_3']); echo "'";} ?>>
                                             </td>
                                             <td>
-                                                <input type="text" class="form-control" id="license_no_4" placeholder="" name="license_no_4" size="1" maxlength="1" onchange="ValidatePassKey(this)"
+                                                <input type="text" class="form-control" id="license_no_4" placeholder="" name="license_no_4" size="1" maxlength="1"
                                                     <?php if (isset($data['license_no_4'])) {echo "value='"; print_r($data['license_no_4']); echo "'";} ?>>
                                             </td>
                                             <td>
-                                                <input type="text" class="form-control" id="license_no_5" placeholder="" name="license_no_5" size="1" maxlength="1" onchange="ValidatePassKey(this)"
+                                                <input type="text" class="form-control" id="license_no_5" placeholder="" name="license_no_5" size="1" maxlength="1"
                                                     <?php if (isset($data['license_no_5'])) {echo "value='"; print_r($data['license_no_5']); echo "'";} ?>>
                                             </td>
                                             <td>
-                                                <input type="text" class="form-control" id="license_no_6" placeholder="" name="license_no_6" size="1" maxlength="1" onchange="ValidatePassKey(this)"
+                                                <input type="text" class="form-control" id="license_no_6" placeholder="" name="license_no_6" size="1" maxlength="1"
                                                     <?php if (isset($data['license_no_6'])) {echo "value='"; print_r($data['license_no_6']); echo "'";} ?>>
                                             </td>
                                             <td>
-                                                <input type="text" class="form-control" id="license_no_7" placeholder="" name="license_no_7" size="1" maxlength="1" onchange="ValidatePassKey(this)"
+                                                <input type="text" class="form-control" id="license_no_7" placeholder="" name="license_no_7" size="1" maxlength="1"
                                                     <?php if (isset($data['license_no_7'])) {echo "value='"; print_r($data['license_no_7']); echo "'";} ?>>
                                             </td>
                                             <td>
-                                                <input type="text" class="form-control" id="license_no_8" placeholder="" name="license_no_8" size="1" maxlength="1" onchange="ValidatePassKey(this)"
+                                                <input type="text" class="form-control" id="license_no_8" placeholder="" name="license_no_8" size="1" maxlength="1"
                                                     <?php if (isset($data['license_no_8'])) {echo "value='"; print_r($data['license_no_8']); echo "'";} ?>>
                                             </td>
                                             <td>
-                                                <input type="text" class="form-control" id="license_no_9" placeholder="" name="license_no_9" size="1" maxlength="1" onchange="ValidatePassKey(this)"
+                                                <input type="text" class="form-control" id="license_no_9" placeholder="" name="license_no_9" size="1" maxlength="1"
                                                     <?php if (isset($data['license_no_9'])) {echo "value='"; print_r($data['license_no_9']); echo "'";} ?>>
                                             </td>
                                         </tr>
@@ -256,25 +256,6 @@
 <script>
     //button active mode
 
-    function ValidatePassKey(tb) {
-//        if (tb.maxLength >= 1){
-//            document.getElementById(tb.id + 1).focus();
-//        }
-        var txtbox1 = document.getElementById("1");
-        var txtbox2 = document.getElementById("2");
-        var txtbox3 = document.getElementById("3");
-        var txtbox4 = document.getElementById("4");
-        var txtbox5 = document.getElementById("5");
-        var txtbox6 = document.getElementById("6");
-        var txtbox7 = document.getElementById("7");
-        var txtbox8 = document.getElementById("8");
-        var txtbox9 = document.getElementById("9");
-
-        if(txtbox1.length==txtbox1.maxLength){
-            txtbox2.focus();
-        }
-
-    }
 
 </script>
 

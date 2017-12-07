@@ -81,10 +81,15 @@ class DriverController extends Controller{
 //                elseif ($result == 2) {
 //                    $data = array('message' => 'Problem adding the driver!');
 //                }
-
+                $this->view('template/head');
+                $this->view('system_operator/side_bar');
+                $this->view('template/top_bar');
                 $this->view('system_operator/add_driver',$data, []);
             }
             else {
+                $this->view('template/head');
+                $this->view('system_operator/side_bar');
+                $this->view('template/top_bar');
                 $data = array(
                     'name' => $name,
                     'nic' => $nic,
@@ -97,6 +102,9 @@ class DriverController extends Controller{
             $this->db_close($dbc);
         }
         else {
+            $this->view('template/head');
+            $this->view('system_operator/side_bar');
+            $this->view('template/top_bar');
             $this->view('system_operator/add_driver');
         }
 
@@ -110,6 +118,9 @@ class DriverController extends Controller{
             'address' => $_POST['address'],
             'contact_no' => $_POST['contact_no']
         );
+        $this->view('template/head');
+        $this->view('system_operator/side_bar');
+        $this->view('template/top_bar');
         $model = $this->model('DriverModel');
         $result = $model->driverInsert($data);
         if ($result == 1) {

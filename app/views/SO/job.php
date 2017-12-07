@@ -13,6 +13,11 @@
                     <div id="openJob" class="w3-container job">
                         <h3 style="margin: 8px 0px;">Open Job Entry</h3>
                         <form action="<?php echo $GLOBALS['base_url']; ?>/jobCon/openJob" method="post">
+                            <div class="form-group">
+                                <label for="id_driver">Driver Name</label>
+                                <input type="text" class="form-control" id="driver" placeholder="Type here" name="id_driver">
+                                <div id="driverList" class="w3-container"></div>
+                            </div>
                             <div class="form-group" style="margin-top: 10px;">
                                 <label for="name">Vehicle Registration Number</label>
                                 <input type="text" class="form-control" name="number" placeholder="Type here">
@@ -100,6 +105,32 @@
     load_notification();
 
     window.setInterval(test, 5000);
+
+    $(document).ready(function() {
+        $('#driver').keyup(function() {
+            var query = $(this).val();
+            if (query != '') {
+                $.ajax({
+                    url:"<?php echo $GLOBALS['base_url']; ?>/DriverController/getDriverAuto",
+                    method:"POST",
+                    data:{query:query},
+                    success:function(data) {
+                        $('#driverList').fadeIn();
+                        $('#driverList').html(data);
+                    }
+                });
+            }
+            else {
+                $('#driverList').fadeOut();
+            }
+        });
+        $(document).on('click','li',function() {
+            if ($(this).text() != 'No driver found') {
+                $('#driver').val($(this).text());
+                $('#driverList').fadeOut();
+            }
+        });
+    });
 
 //    function test() {
 //        load_notification();

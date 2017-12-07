@@ -44,34 +44,34 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="id_vehicle">Vehicle Registration Number</label>
-                                    <table>
+                                    <table class="w3-table" style="width: 70%;">
                                         <tr>
                                             <td>
-                                                <input type="text" class="form-control" id="id_vehicle_1" placeholder="" name="id_vehicle_1" size="1" maxlength="1" onkeyup="ValidatePassKey(this)"
+                                                <input type="text" class="form-control" id="vehicle_id_1" placeholder="" name="id_vehicle_1" size="1" maxlength="1" onkeyup="validatePassKey(this)"
                                                     <?php if (isset($data['id_vehicle_1'])) {echo "value='"; print_r($data['id_vehicle_1']); echo "'";} ?>>
                                             </td>
                                             <td>
-                                                <input type="text" class="form-control" id="id_vehicle_2" placeholder="" name="id_vehicle_2" size="1" maxlength="1" onkeypress="ValidatePassKey(this)"
+                                                <input type="text" class="form-control" id="vehicle_id_2" placeholder="" name="id_vehicle_2" size="1" maxlength="1" onkeyup="validatePassKey(this)"
                                                     <?php if (isset($data['id_vehicle_2'])) {echo "value='"; print_r($data['id_vehicle_2']); echo "'";} ?>>
                                             </td>
                                             <td>
-                                                <input type="text" class="form-control" id="id_vehicle_3" placeholder="" name="id_vehicle_3" size="1" maxlength="1" onchange="ValidatePassKey(this)"
+                                                <input type="text" class="form-control" id="vehicle_id_3" placeholder="" name="id_vehicle_3" size="1" maxlength="1" onkeyup="validatePassKey(this)"
                                                     <?php if (isset($data['id_vehicle_3'])) {echo "value='"; print_r($data['id_vehicle_3']); echo "'";} ?>>
                                             </td>
                                             <td>
-                                                <input type="text" class="form-control" id="id_vehicle_4" placeholder="" name="id_vehicle_4" size="1" maxlength="1" onchange="ValidatePassKey(this)"
+                                                <input type="text" class="form-control" id="vehicle_id_4" placeholder="" name="id_vehicle_4" size="1" maxlength="1" onkeyup="validatePassKey(this)"
                                                     <?php if (isset($data['id_vehicle_4'])) {echo "value='"; print_r($data['id_vehicle_4']); echo "'";} ?>>
                                             </td>
                                             <td>
-                                                <input type="text" class="form-control" id="id_vehicle_5" placeholder="" name="id_vehicle_5" size="1" maxlength="1" onchange="ValidatePassKey(this)"
+                                                <input type="text" class="form-control" id="vehicle_id_5" placeholder="" name="id_vehicle_5" size="1" maxlength="1" onkeyup="validatePassKey(this)"
                                                     <?php if (isset($data['id_vehicle_5'])) {echo "value='"; print_r($data['id_vehicle_5']); echo "'";} ?>>
                                             </td>
                                             <td>
-                                                <input type="text" class="form-control" id="id_vehicle_6" placeholder="" name="id_vehicle_6" size="1" maxlength="1" onchange="ValidatePassKey(this)"
+                                                <input type="text" class="form-control" id="vehicle_id_6" placeholder="" name="id_vehicle_6" size="1" maxlength="1" onkeyup="validatePassKey(this)"
                                                     <?php if (isset($data['id_vehicle_6'])) {echo "value='"; print_r($data['id_vehicle_6']); echo "'";} ?>>
                                             </td>
                                             <td>
-                                                <input type="text" class="form-control" id="id_vehicle_7" placeholder="" name="id_vehicle_7" size="1" maxlength="1" onchange="ValidatePassKey(this)"
+                                                <input type="text" class="form-control" id="vehicle_id_7" placeholder="" name="id_vehicle_7" size="1" maxlength="1"
                                                     <?php if (isset($data['id_vehicle_7'])) {echo "value='"; print_r($data['id_vehicle_7']); echo "'";} ?>>
                                             </td>
                                         </tr>
@@ -123,7 +123,7 @@
                     method:"POST",
                     data:{query:query},
                     success:function(data) {
-                        $('#driverList').fadeIn();
+                        $('#driverList').fadeIn(1);
                         $('#driverList').html(data);
                     }
                 });
@@ -135,10 +135,13 @@
         $(document).on('click','li',function() {
             if ($(this).text() != 'No driver found') {
                 $('#driver').val($(this).text());
-                $('#driverList').fadeOut();
+                $('#driverList').fadeOut(1);
             }
         });
     });
+
+
+
 
 </script>
 
