@@ -77,7 +77,7 @@
             <div class="w3-container w3-white w3-padding-large">
                 <div class="row-content">
                     <div class="col-md-9 col-sm-12">
-                        <div class="w3-container w3-teal w3-margin-bottom"><h3>Maintenance Section - Driver Registration Form</h3></div>
+                        <div class="w3-container w3-teal w3-margin-bottom"><h3>Driver Registration</h3></div>
                         <div class="col-sm-8">
                             <form action="<?php echo $GLOBALS['base_url']; ?>/DriverController/add_driver" method="post">
                                 <div class="form-group">
@@ -254,15 +254,6 @@
 
 
 <script>
-    // Script to open and close sidebar
-    function w3_open() {
-        document.getElementById("mySidebar").style.display = "block";
-    }
-
-    function w3_close() {
-        document.getElementById("mySidebar").style.display = "none";
-    }
-
     //button active mode
 
     function ValidatePassKey(tb) {

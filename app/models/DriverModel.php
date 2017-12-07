@@ -20,6 +20,14 @@ class DriverModel extends Controller {
 
     }
 
+    public function getDriverNames() {
+        $dbc = $this->db_connect();
+        $query = "SELECT driver_name FROM driver WHERE driver_name LIKE '%" . $_POST['query'] . "%'";
+        $result = mysqli_query($dbc,$query) or die($dbc);
+        $this->db_close($dbc);
+        return $result;
+    }
+
 
 
 

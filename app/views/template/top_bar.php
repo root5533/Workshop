@@ -7,12 +7,13 @@
     <div class='w3-container w3-teal' style='padding-top: 10px;'>
         <div class='row' style="line-height: 50px; vertical-align: bottom;">
             <div class="col-sm-10 w3-padding-large">
-                <h2 style="margin: 0px;"><i class="fa fa-user"></i> <?php echo $_SESSION['user'] . "(" . $_SESSION['type'] . ")" ?></h2>
+                <h2 style="margin: 0px;"><span class="glyphicon glyphicon-user"></span> <?php echo $_SESSION['user'] . "(" . $_SESSION['type'] . ")" ?></h2>
+                <h3>Maintenance</h3>
             </div>
             <div class="col-sm-2 w3-padding-large">
                 <h4 style="margin-bottom: 0px;">
                     <a href="<?php echo $GLOBALS['base_url']; ?>/loginCon/signout" style="text-decoration: none;color: white;">
-                        <i class="fa fa-user-circle"></i> Sign Out
+                        <span class="glyphicon glyphicon-log-out"></span> Sign Out
                     </a></h4>
             </div>
         </div>

@@ -122,4 +122,23 @@ class DriverController extends Controller{
 
     }
 
+    public function getDriverAuto() {
+        $dbc = $this->db_connect();
+        if (isset($_POST['query'])) {
+            $model = $this->model('DriverModel');
+            $result = $model->getDriverNames();
+            $output = "<ul class='w3-ul w3-hoverable'>";
+            if (mysqli_num_rows($result) > 0) {
+                while ($row = mysqli_fetch_array($result)) {
+                    $output .= '<li>' . $row['driver_name'] . "</li>";
+                }
+            }
+            else {
+                $output .= "<li><i>No driver found</i></li>";
+            }
+            $output .= "</ul>";
+            echo $output;
+        }
+    }
+
 }

@@ -61,9 +61,15 @@ class VehicleController extends Controller{
                     }
                     $data = array('message' => 'There are more suggestions for driver name!','id_driver' => $string);
                 }
+                $this->view('template/head');
+                $this->view('system_operator/side_bar');
+                $this->view('template/top_bar');
                 $this->view('system_operator/add_vehicle',$data, []);
             }
             else {
+                $this->view('template/head');
+                $this->view('system_operator/side_bar');
+                $this->view('template/top_bar');
                 $data = array(
                     'id_vehicle' => $id_vehicle,
                     'id_driver' => $id_driver,
