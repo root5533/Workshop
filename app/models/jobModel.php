@@ -7,7 +7,7 @@ class JobModel extends Controller{
         $dbc = $this->db_connect();
         //check for existing driver
         $string = $data['job_applicant'];
-        $query1 = "SELECT * FROM driver WHERE name LIKE '%$string%' LIMIT 1";
+        $query1 = "SELECT * FROM driver WHERE driver_name LIKE '%$string%' LIMIT 1";
         $result1 = mysqli_query($dbc, $query1) or die(mysqli_error($dbc));
         //check for existing vehicle
         $query2 = "select * from vehicle where registration_no='" . $data['id_vehicle'] . "' limit 1";

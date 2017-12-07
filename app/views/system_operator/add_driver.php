@@ -60,8 +60,8 @@
         //display result after confirmation
         if(isset($data['display'])) { ?>
 
-        <div class="w3-panel w3-teal">
-            <p><h3><?php echo $data['display']; ?></h3></p>
+        <div class="w3-panel w3-blue">
+            <p><h4><?php echo $data['display']; ?></h4></p>
         </div>
 
         <?php }

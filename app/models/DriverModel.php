@@ -28,7 +28,12 @@ class DriverModel extends Controller {
         return $result;
     }
 
-
-
+    public function getDriverNameFromReg() {
+        $dbc = $this->db_connect();
+        $query = "SELECT driver.driver_name FROM driver,vehicle WHERE driver.id = vehicle.id_driver AND vehicle.registration_no = '" . $_POST['query'] . "'";
+        $result = mysqli_query($dbc,$query) or die($dbc);
+        $this->db_close($dbc);
+        return $result;
+    }
 
 }

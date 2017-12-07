@@ -69,7 +69,7 @@
                             </form>
                         </div>
                     </div>
-                    <div class="col-md-3 col-sm-12 w3-border-left" style="min-height: 800px;">
+                    <div class="col-md-3 col-sm-12 w3-border-left" style="min-height: 600px;">
                         <button type="button" class="w3-button w3-block" id="notifButton">
                             <h3 style="margin: 0px;text-align: center;">
                                 Notification
@@ -94,30 +94,6 @@
 <script>
 
     //button active mode
-    var page_title = document.getElementById("title").innerHTML;
-
-
-    if(page_title.indexOf("Add Jobs")>-1){
-        document.getElementById("btn_add_jobs").setAttribute("class","w3-button w3-large w3-block w3-teal");
-    }
-    else if(page_title.indexOf("View Jobs")>-1){
-        document.getElementById("btn_view_jobs").setAttribute("class","w3-button w3-large w3-block w3-teal");
-    }
-    else if(page_title.indexOf("Vehicle Entry Records")>-1){
-        document.getElementById("btn_vehicle_entry_records").setAttribute("class","w3-button w3-large w3-block w3-teal");
-    }
-    else if(page_title.indexOf("Add Complains")>-1){
-        document.getElementById("btn_add_complains").setAttribute("class","w3-button w3-large w3-block w3-teal");
-    }
-    else if(page_title.indexOf("View Complains")>-1){
-        document.getElementById("btn_view_complains").setAttribute("class","w3-button w3-large w3-block w3-teal");
-    }
-    else if(page_title.indexOf("Add Vehicle")>-1){
-        document.getElementById("btn_add_vehicle").setAttribute("class","w3-button w3-large w3-block w3-teal");
-    }
-    else if(page_title.indexOf("Add Driver")>-1){
-        document.getElementById("btn_add_driver").setAttribute("class","w3-button w3-large w3-block w3-teal");
-    }
 
 </script>
 

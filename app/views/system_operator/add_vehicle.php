@@ -17,13 +17,14 @@
                             <form action="<?php echo $GLOBALS['base_url']; ?>/VehicleController/add_vehicle" method="post">
                                 <div class="form-group">
                                     <label for="id_driver">Driver Name</label>
-                                    <input type="text" class="form-control" id="driver" placeholder="Type here" name="id_driver"
+                                    <input type="text" class="form-control" id="driver" placeholder="Type here" name="id_driver" style="width: 50%;"
                                         <?php if (isset($data['id_driver'])) {echo "value='"; print_r($data['id_driver']); echo "'";} ?>>
+                                    <div id="driverList" class="w3-container"></div>
                                     <?php
                                     if(isset($error['id_driver_error'])) {
                                         echo "<div class='w3-panel w3-red'><h5>" . $error['id_driver_error'] . "</h5></div>";
                                     } ?>
-                                    <div id="driverList" class="w3-container"></div>
+
                                 </div>
                                 <div class="form-group">
                                     <label for="type">Vehicle Type</label>

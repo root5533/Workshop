@@ -2,12 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="148fc998-9203-4492-9caa-80c98e27304d" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/DriverController.php" afterPath="$PROJECT_DIR$/app/controllers/DriverController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/SO/job.php" afterPath="$PROJECT_DIR$/app/views/SO/job.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/JobController.php" afterPath="$PROJECT_DIR$/app/controllers/JobController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/VehicleController.php" afterPath="$PROJECT_DIR$/app/controllers/VehicleController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/DriverModel.php" afterPath="$PROJECT_DIR$/app/models/DriverModel.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/VehicleModel.php" afterPath="$PROJECT_DIR$/app/models/VehicleModel.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/system_operator/add_complains.php" afterPath="$PROJECT_DIR$/app/views/system_operator/add_complains.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/system_operator/add_driver.php" afterPath="$PROJECT_DIR$/app/views/system_operator/add_driver.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/system_operator/add_vehicle.php" afterPath="$PROJECT_DIR$/app/views/system_operator/add_vehicle.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/custom.css" afterPath="$PROJECT_DIR$/public/assets/custom.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/notif1.js" afterPath="$PROJECT_DIR$/public/assets/notif1.js" />
     </list>
     <ignored path="Workshopv2.iws" />
@@ -30,8 +32,8 @@
       <file leaf-file-name="notif1.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/assets/notif1.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="16" column="33" lean-forward="false" selection-start-line="16" selection-start-column="33" selection-end-line="16" selection-end-column="33" />
+            <state relative-caret-position="478">
+              <caret line="67" column="0" lean-forward="false" selection-start-line="67" selection-start-column="0" selection-end-line="67" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -40,14 +42,44 @@
       <file leaf-file-name="add_complains.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/system_operator/add_complains.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="282">
-              <caret line="93" column="8" lean-forward="false" selection-start-line="93" selection-start-column="8" selection-end-line="93" selection-end-column="8" />
+            <state relative-caret-position="330">
+              <caret line="22" column="55" lean-forward="false" selection-start-line="22" selection-start-column="55" selection-end-line="22" selection-end-column="55" />
               <folding>
-                <marker date="1512613902000" expanded="true" signature="1368:1384" ph="..." />
-                <marker date="1512613902000" expanded="true" signature="1952:1968" ph="..." />
-                <marker date="1512613902000" expanded="true" signature="3291:3307" ph="..." />
-                <marker date="1512613902000" expanded="true" signature="4024:4040" ph="..." />
-                <marker date="1512613902000" expanded="true" signature="4752:4768" ph="..." />
+                <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+                <marker date="1512626759000" expanded="true" signature="1368:1384" ph="..." />
+                <marker date="1512626759000" expanded="true" signature="1952:1968" ph="..." />
+                <marker date="1512626759000" expanded="true" signature="3291:3307" ph="..." />
+                <marker date="1512626759000" expanded="true" signature="4024:4040" ph="..." />
+                <marker date="1512626759000" expanded="true" signature="4752:4768" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="add_jobs.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/system_operator/add_jobs.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="224">
+              <caret line="81" column="110" lean-forward="false" selection-start-line="81" selection-start-column="110" selection-end-line="81" selection-end-column="110" />
+              <folding>
+                <element signature="e#484#491#1#HTML" expanded="true" />
+                <element signature="n#style#0;n#ul#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#li#0;n#ul#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#li#1;n#ul#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#li#2;n#ul#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#li#3;n#ul#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#ul#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#button#1;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#input#0;n#div#0;n#form#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#form#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#input#0;n#div#1;n#form#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#input#0;n#div#2;n#form#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+                <marker date="1512637370000" expanded="false" signature="3785:3803" ph="..." />
+                <marker date="1512637370000" expanded="false" signature="6517:6542" ph="..." />
+                <marker date="1512637370000" expanded="false" signature="6918:6949" ph="..." />
+                <marker date="1512637370000" expanded="false" signature="7086:7122" ph="..." />
+                <marker date="1512637370000" expanded="false" signature="7282:7314" ph="..." />
               </folding>
             </state>
           </provider>
@@ -56,9 +88,44 @@
       <file leaf-file-name="add_vehicle.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/system_operator/add_vehicle.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="111">
-              <caret line="46" column="77" lean-forward="false" selection-start-line="46" selection-start-column="77" selection-end-line="46" selection-end-column="77" />
+            <state relative-caret-position="315">
+              <caret line="21" column="78" lean-forward="true" selection-start-line="21" selection-start-column="78" selection-end-line="21" selection-end-column="78" />
+              <folding>
+                <element signature="n#style#0;n#input#0;n#div#0;n#form#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="JobController.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/controllers/JobController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="487">
+              <caret line="64" column="30" lean-forward="false" selection-start-line="64" selection-start-column="30" selection-end-line="64" selection-end-column="30" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="JobModel.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/models/JobModel.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="135">
+              <caret line="9" column="53" lean-forward="false" selection-start-line="9" selection-start-column="53" selection-end-line="9" selection-end-column="53" />
+              <folding>
+                <marker date="1512636865000" expanded="true" signature="137:203" ph="INSERT INTO jobentry... " />
+                <marker date="1512636865000" expanded="true" signature="137:241" ph="INSERT INTO jobentry... " />
+                <marker date="1512636865000" expanded="true" signature="137:275" ph="INSERT INTO jobentry... " />
+                <marker date="1512636865000" expanded="true" signature="137:304" ph="INSERT INTO jobentry... " />
+                <marker date="1512636865000" expanded="true" signature="406:459" ph="INSERT INTO jobcomments... " />
+                <marker date="1512636865000" expanded="true" signature="406:484" ph="INSERT INTO jobcomments... " />
+                <marker date="1512636865000" expanded="true" signature="406:493" ph="INSERT INTO jobcomments... " />
+                <marker date="1512636865000" expanded="true" signature="406:519" ph="INSERT INTO jobcomments... " />
+                <marker date="1512636865000" expanded="true" signature="406:545" ph="INSERT INTO jobcomments... " />
+                <marker date="1512636865000" expanded="true" signature="406:546" ph="INSERT INTO jobcomments... " />
+                <marker date="1512636865000" expanded="true" signature="889:1070" ph="insert into jobentry... " />
+                <marker date="1512636865000" expanded="true" signature="2028:2126" ph="select id,id... " />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -66,41 +133,18 @@
       <file leaf-file-name="DriverController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/DriverController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2070">
-              <caret line="138" column="49" lean-forward="true" selection-start-line="138" selection-start-column="49" selection-end-line="138" selection-end-column="49" />
+            <state relative-caret-position="495">
+              <caret line="122" column="40" lean-forward="true" selection-start-line="122" selection-start-column="40" selection-end-line="122" selection-end-column="40" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SOController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/SOController.php">
+      <file leaf-file-name="VehicleController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/controllers/VehicleController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" column="8" lean-forward="false" selection-start-line="15" selection-start-column="8" selection-end-line="17" selection-end-column="40" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DriverModel.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/models/DriverModel.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="405">
-              <caret line="27" column="23" lean-forward="true" selection-start-line="27" selection-start-column="23" selection-end-line="27" selection-end-column="23" />
-              <folding>
-                <marker date="1512617047000" expanded="true" signature="144:378" ph="insert into driver... " />
-                <marker date="1512617047000" expanded="true" signature="769:850" ph="SELECT drive... driver" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="custom.css" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/public/assets/custom.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="-799">
+              <caret line="59" column="39" lean-forward="true" selection-start-line="59" selection-start-column="39" selection-end-line="59" selection-end-column="39" />
               <folding />
             </state>
           </provider>
@@ -109,19 +153,29 @@
       <file leaf-file-name="add_driver.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/system_operator/add_driver.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="231">
-              <caret line="93" column="77" lean-forward="false" selection-start-line="93" selection-start-column="77" selection-end-line="93" selection-end-column="77" />
+            <state relative-caret-position="418">
+              <caret line="63" column="18" lean-forward="false" selection-start-line="63" selection-start-column="18" selection-end-line="63" selection-end-column="18" />
               <folding>
-                <element signature="n#style#0;n#table#0;n#div#2;n#form#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
-                <marker date="1512625477000" expanded="true" signature="2879:2916" ph="..." />
-                <marker date="1512625477000" expanded="true" signature="4381:4397" ph="..." />
-                <marker date="1512625477000" expanded="true" signature="9278:9294" ph="..." />
-                <marker date="1512625477000" expanded="true" signature="13720:13736" ph="..." />
-                <marker date="1512625477000" expanded="true" signature="13974:13990" ph="..." />
-                <marker date="1512625477000" expanded="true" signature="14241:14257" ph="..." />
-                <marker date="1512625477000" expanded="true" signature="15629:15645" ph="..." />
-                <marker date="1512625477000" expanded="true" signature="16864:16880" ph="..." />
+                <element signature="n#style#0;n#table#0;n#div#1;n#form#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+                <marker date="1512637092000" expanded="true" signature="2879:2916" ph="..." />
+                <marker date="1512637092000" expanded="true" signature="4381:4397" ph="..." />
+                <marker date="1512637092000" expanded="true" signature="9278:9294" ph="..." />
+                <marker date="1512637092000" expanded="true" signature="13720:13736" ph="..." />
+                <marker date="1512637092000" expanded="true" signature="13974:13990" ph="..." />
+                <marker date="1512637092000" expanded="true" signature="14241:14257" ph="..." />
+                <marker date="1512637092000" expanded="true" signature="15629:15645" ph="..." />
+                <marker date="1512637092000" expanded="true" signature="16864:16880" ph="..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SOController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/controllers/SOController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="300">
+              <caret line="20" column="52" lean-forward="true" selection-start-line="20" selection-start-column="52" selection-end-line="20" selection-end-column="52" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -149,12 +203,14 @@
       <find>$base_url</find>
       <find>vehicle ty</find>
       <find>open</find>
+      <find>id01</find>
     </findStrings>
     <replaceStrings>
       <replace>'</replace>
       <replace>SOController</replace>
       <replace>$GLOBALS['base_url']</replace>
       <replace />
+      <replace>idModal</replace>
     </replaceStrings>
   </component>
   <component name="FindManager">
@@ -183,24 +239,26 @@
         <option value="$PROJECT_DIR$/app/views/EN/assign.php" />
         <option value="$PROJECT_DIR$/app/views/template/side_bar.php" />
         <option value="$PROJECT_DIR$/app/controllers/home.php" />
-        <option value="$PROJECT_DIR$/app/models/VehicleModel.php" />
         <option value="$PROJECT_DIR$/app/controllers/SOController.php" />
         <option value="$PROJECT_DIR$/app/views/system_operator/side_bar.php" />
         <option value="$PROJECT_DIR$/app/controllers/ComplainController.php" />
         <option value="$PROJECT_DIR$/app/models/ComplainModel.php" />
-        <option value="$PROJECT_DIR$/app/controllers/VehicleController.php" />
         <option value="$PROJECT_DIR$/app/views/template/head.php" />
         <option value="$PROJECT_DIR$/app/views/template/top_bar.php" />
-        <option value="$PROJECT_DIR$/app/views/system_operator/add_complains.php" />
         <option value="$PROJECT_DIR$/app/views/system_operator/head.php" />
-        <option value="$PROJECT_DIR$/app/models/DriverModel.php" />
         <option value="$PROJECT_DIR$/app/views/SO/job.php" />
-        <option value="$PROJECT_DIR$/public/assets/notif1.js" />
-        <option value="$PROJECT_DIR$/app/views/system_operator/add_vehicle.php" />
-        <option value="$PROJECT_DIR$/app/views/system_operator/add_driver.php" />
-        <option value="$PROJECT_DIR$/app/controllers/DriverController.php" />
-        <option value="$PROJECT_DIR$/app/views/system_operator/add_jobs.php" />
         <option value="$PROJECT_DIR$/public/assets/custom.css" />
+        <option value="$PROJECT_DIR$/app/views/system_operator/add_complains.php" />
+        <option value="$PROJECT_DIR$/app/models/VehicleModel.php" />
+        <option value="$PROJECT_DIR$/app/controllers/DriverController.php" />
+        <option value="$PROJECT_DIR$/app/models/DriverModel.php" />
+        <option value="$PROJECT_DIR$/app/controllers/VehicleController.php" />
+        <option value="$PROJECT_DIR$/public/assets/notif1.js" />
+        <option value="$PROJECT_DIR$/app/models/JobModel.php" />
+        <option value="$PROJECT_DIR$/app/views/system_operator/add_driver.php" />
+        <option value="$PROJECT_DIR$/app/views/system_operator/add_vehicle.php" />
+        <option value="$PROJECT_DIR$/app/views/system_operator/add_jobs.php" />
+        <option value="$PROJECT_DIR$/app/controllers/JobController.php" />
       </list>
     </option>
   </component>
@@ -374,12 +432,12 @@
       <workItem from="1512191913411" duration="272000" />
       <workItem from="1512192532155" duration="9776000" />
       <workItem from="1512205077320" duration="8037000" />
-      <workItem from="1512618649099" duration="5922000" />
+      <workItem from="1512618649099" duration="14522000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="99179000" />
+    <option name="totallyTimeSpent" value="107779000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1680" height="970" extended-state="6" />
@@ -422,14 +480,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/controllers/home.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="12" column="40" lean-forward="false" selection-start-line="12" selection-start-column="40" selection-end-line="12" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="84">
@@ -593,25 +643,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/JobModel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="57" lean-forward="false" selection-start-line="10" selection-start-column="57" selection-end-line="10" selection-end-column="57" />
-          <folding>
-            <marker date="1512519026000" expanded="true" signature="137:203" ph="INSERT INTO jobentry... " />
-            <marker date="1512519026000" expanded="true" signature="137:241" ph="INSERT INTO jobentry... " />
-            <marker date="1512519026000" expanded="true" signature="137:268" ph="INSERT INTO jobentry... " />
-            <marker date="1512519026000" expanded="true" signature="137:297" ph="INSERT INTO jobentry... " />
-            <marker date="1512519026000" expanded="true" signature="399:452" ph="INSERT INTO jobcomments... " />
-            <marker date="1512519026000" expanded="true" signature="399:477" ph="INSERT INTO jobcomments... " />
-            <marker date="1512519026000" expanded="true" signature="399:486" ph="INSERT INTO jobcomments... " />
-            <marker date="1512519026000" expanded="true" signature="399:512" ph="INSERT INTO jobcomments... " />
-            <marker date="1512519026000" expanded="true" signature="399:538" ph="INSERT INTO jobcomments... " />
-            <marker date="1512519026000" expanded="true" signature="399:539" ph="INSERT INTO jobcomments... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/assets/dropdown.js" />
     <entry file="file://$PROJECT_DIR$/app/controllers/notificationCon.php">
       <provider selected="true" editor-type-id="text-editor">
@@ -683,20 +714,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/VehicleModel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="164">
-          <caret line="17" column="49" lean-forward="true" selection-start-line="17" selection-start-column="49" selection-end-line="17" selection-end-column="49" />
-          <folding>
-            <marker date="1512540171000" expanded="true" signature="217:280" ph="SELECT * FRO... driver" />
-            <marker date="1512540171000" expanded="true" signature="531:712" ph="insert into vehicle... " />
-            <marker date="1512540171000" expanded="true" signature="1261:1327" ph="SELECT name driver" />
-            <marker date="1512540171000" expanded="true" signature="1777:1858" ph="select * fro... Vehicle" />
-            <marker date="1512540171000" expanded="true" signature="2108:2252" ph="insert into vehicleentryrecord... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/system_operator/side_bar.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
@@ -745,14 +762,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/VehicleController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1065">
-          <caret line="71" column="48" lean-forward="true" selection-start-line="71" selection-start-column="48" selection-end-line="71" selection-end-column="48" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/template/head.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
@@ -785,39 +794,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/system_operator/add_complains.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="282">
-          <caret line="93" column="8" lean-forward="false" selection-start-line="93" selection-start-column="8" selection-end-line="93" selection-end-column="8" />
-          <folding>
-            <marker date="1512613902000" expanded="true" signature="1368:1384" ph="..." />
-            <marker date="1512613902000" expanded="true" signature="1952:1968" ph="..." />
-            <marker date="1512613902000" expanded="true" signature="3291:3307" ph="..." />
-            <marker date="1512613902000" expanded="true" signature="4024:4040" ph="..." />
-            <marker date="1512613902000" expanded="true" signature="4752:4768" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/assets/notif1.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="33" lean-forward="false" selection-start-line="16" selection-start-column="33" selection-end-line="16" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/DriverModel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="27" column="23" lean-forward="true" selection-start-line="27" selection-start-column="23" selection-end-line="27" selection-end-column="23" />
-          <folding>
-            <marker date="1512617047000" expanded="true" signature="144:378" ph="insert into driver... " />
-            <marker date="1512617047000" expanded="true" signature="769:850" ph="SELECT drive... driver" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/assets/w3.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -836,66 +812,171 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/system_operator/add_vehicle.php">
+    <entry file="file://$PROJECT_DIR$/public/assets/custom.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="111">
-          <caret line="46" column="77" lean-forward="false" selection-start-line="46" selection-start-column="77" selection-end-line="46" selection-end-column="77" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/system_operator/add_driver.php">
+    <entry file="file://$PROJECT_DIR$/app/models/VehicleModel.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="93" column="77" lean-forward="false" selection-start-line="93" selection-start-column="77" selection-end-line="93" selection-end-column="77" />
+        <state relative-caret-position="716">
+          <caret line="79" column="23" lean-forward="true" selection-start-line="79" selection-start-column="23" selection-end-line="79" selection-end-column="23" />
           <folding>
-            <element signature="n#style#0;n#table#0;n#div#2;n#form#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
-            <marker date="1512625477000" expanded="true" signature="2879:2916" ph="..." />
-            <marker date="1512625477000" expanded="true" signature="4381:4397" ph="..." />
-            <marker date="1512625477000" expanded="true" signature="9278:9294" ph="..." />
-            <marker date="1512625477000" expanded="true" signature="13720:13736" ph="..." />
-            <marker date="1512625477000" expanded="true" signature="13974:13990" ph="..." />
-            <marker date="1512625477000" expanded="true" signature="14241:14257" ph="..." />
-            <marker date="1512625477000" expanded="true" signature="15629:15645" ph="..." />
-            <marker date="1512625477000" expanded="true" signature="16864:16880" ph="..." />
+            <marker date="1512629721000" expanded="true" signature="217:280" ph="SELECT * FRO... driver" />
+            <marker date="1512629721000" expanded="true" signature="531:712" ph="insert into vehicle... " />
+            <marker date="1512629721000" expanded="true" signature="1261:1327" ph="SELECT name driver" />
+            <marker date="1512629721000" expanded="true" signature="1777:1858" ph="select * fro... Vehicle" />
+            <marker date="1512629721000" expanded="true" signature="2108:2252" ph="insert into vehicleentryrecord... " />
+            <marker date="1512629721000" expanded="true" signature="2872:2962" ph="SELECT regis... vehicle" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/DriverModel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="525">
+          <caret line="35" column="23" lean-forward="true" selection-start-line="35" selection-start-column="23" selection-end-line="35" selection-end-column="23" />
+          <folding>
+            <marker date="1512630969000" expanded="true" signature="144:378" ph="insert into driver... " />
+            <marker date="1512630969000" expanded="true" signature="769:850" ph="SELECT drive... driver" />
+            <marker date="1512630969000" expanded="true" signature="1072:1154" ph="SELECT drive... driver" />
+            <marker date="1512630969000" expanded="true" signature="1072:1185" ph="SELECT drive... driver" />
+            <marker date="1512630969000" expanded="true" signature="1072:1209" ph="SELECT drive... driver" />
+            <marker date="1512630969000" expanded="true" signature="1072:1210" ph="SELECT drive... driver" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/SOController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="8" lean-forward="false" selection-start-line="15" selection-start-column="8" selection-end-line="17" selection-end-column="40" />
+        <state relative-caret-position="300">
+          <caret line="20" column="52" lean-forward="true" selection-start-line="20" selection-start-column="52" selection-end-line="20" selection-end-column="52" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/system_operator/add_jobs.php">
+    <entry file="file://$PROJECT_DIR$/app/controllers/VehicleController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="-799">
+          <caret line="59" column="39" lean-forward="true" selection-start-line="59" selection-start-column="39" selection-end-line="59" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/assets/notif1.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="478">
+          <caret line="67" column="0" lean-forward="false" selection-start-line="67" selection-start-column="0" selection-end-line="67" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/system_operator/add_complains.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="22" column="55" lean-forward="false" selection-start-line="22" selection-start-column="55" selection-end-line="22" selection-end-column="55" />
           <folding>
-            <marker date="1512626145000" expanded="true" signature="175:188" ph="..." />
-            <marker date="1512626145000" expanded="true" signature="4281:4297" ph="..." />
-            <marker date="1512626145000" expanded="true" signature="4986:5002" ph="..." />
-            <marker date="1512626145000" expanded="true" signature="5693:5709" ph="..." />
-            <marker date="1512626145000" expanded="true" signature="6377:6393" ph="..." />
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <marker date="1512626759000" expanded="true" signature="1368:1384" ph="..." />
+            <marker date="1512626759000" expanded="true" signature="1952:1968" ph="..." />
+            <marker date="1512626759000" expanded="true" signature="3291:3307" ph="..." />
+            <marker date="1512626759000" expanded="true" signature="4024:4040" ph="..." />
+            <marker date="1512626759000" expanded="true" signature="4752:4768" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/DriverController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2070">
-          <caret line="138" column="49" lean-forward="true" selection-start-line="138" selection-start-column="49" selection-end-line="138" selection-end-column="49" />
+        <state relative-caret-position="495">
+          <caret line="122" column="40" lean-forward="true" selection-start-line="122" selection-start-column="40" selection-end-line="122" selection-end-column="40" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/assets/custom.css">
+    <entry file="file://$PROJECT_DIR$/app/models/JobModel.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="135">
+          <caret line="9" column="53" lean-forward="false" selection-start-line="9" selection-start-column="53" selection-end-line="9" selection-end-column="53" />
+          <folding>
+            <marker date="1512636865000" expanded="true" signature="137:203" ph="INSERT INTO jobentry... " />
+            <marker date="1512636865000" expanded="true" signature="137:241" ph="INSERT INTO jobentry... " />
+            <marker date="1512636865000" expanded="true" signature="137:275" ph="INSERT INTO jobentry... " />
+            <marker date="1512636865000" expanded="true" signature="137:304" ph="INSERT INTO jobentry... " />
+            <marker date="1512636865000" expanded="true" signature="406:459" ph="INSERT INTO jobcomments... " />
+            <marker date="1512636865000" expanded="true" signature="406:484" ph="INSERT INTO jobcomments... " />
+            <marker date="1512636865000" expanded="true" signature="406:493" ph="INSERT INTO jobcomments... " />
+            <marker date="1512636865000" expanded="true" signature="406:519" ph="INSERT INTO jobcomments... " />
+            <marker date="1512636865000" expanded="true" signature="406:545" ph="INSERT INTO jobcomments... " />
+            <marker date="1512636865000" expanded="true" signature="406:546" ph="INSERT INTO jobcomments... " />
+            <marker date="1512636865000" expanded="true" signature="889:1070" ph="insert into jobentry... " />
+            <marker date="1512636865000" expanded="true" signature="2028:2126" ph="select id,id... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/system_operator/add_driver.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="63" column="18" lean-forward="false" selection-start-line="63" selection-start-column="18" selection-end-line="63" selection-end-column="18" />
+          <folding>
+            <element signature="n#style#0;n#table#0;n#div#1;n#form#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <marker date="1512637092000" expanded="true" signature="2879:2916" ph="..." />
+            <marker date="1512637092000" expanded="true" signature="4381:4397" ph="..." />
+            <marker date="1512637092000" expanded="true" signature="9278:9294" ph="..." />
+            <marker date="1512637092000" expanded="true" signature="13720:13736" ph="..." />
+            <marker date="1512637092000" expanded="true" signature="13974:13990" ph="..." />
+            <marker date="1512637092000" expanded="true" signature="14241:14257" ph="..." />
+            <marker date="1512637092000" expanded="true" signature="15629:15645" ph="..." />
+            <marker date="1512637092000" expanded="true" signature="16864:16880" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/system_operator/add_vehicle.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" column="78" lean-forward="true" selection-start-line="21" selection-start-column="78" selection-end-line="21" selection-end-column="78" />
+          <folding>
+            <element signature="n#style#0;n#input#0;n#div#0;n#form#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/system_operator/add_jobs.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="81" column="110" lean-forward="false" selection-start-line="81" selection-start-column="110" selection-end-line="81" selection-end-column="110" />
+          <folding>
+            <element signature="e#484#491#1#HTML" expanded="true" />
+            <element signature="n#style#0;n#ul#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#li#0;n#ul#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#li#1;n#ul#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#li#2;n#ul#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#li#3;n#ul#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#ul#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#button#1;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#div#0;n#form#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#form#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#div#1;n#form#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#div#2;n#form#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <marker date="1512637370000" expanded="false" signature="3785:3803" ph="..." />
+            <marker date="1512637370000" expanded="false" signature="6517:6542" ph="..." />
+            <marker date="1512637370000" expanded="false" signature="6918:6949" ph="..." />
+            <marker date="1512637370000" expanded="false" signature="7086:7122" ph="..." />
+            <marker date="1512637370000" expanded="false" signature="7282:7314" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/JobController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="487">
+          <caret line="64" column="30" lean-forward="false" selection-start-line="64" selection-start-column="30" selection-end-line="64" selection-end-column="30" />
           <folding />
         </state>
       </provider>

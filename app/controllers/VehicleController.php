@@ -61,27 +61,21 @@ class VehicleController extends Controller{
                     }
                     $data = array('message' => 'There are more suggestions for driver name!','id_driver' => $string);
                 }
-                $this->view('template/head');
-                $this->view('system_operator/side_bar');
-                $this->view('template/top_bar');
-                $this->view('system_operator/add_vehicle',$data, []);
+                $this->loadView($data);
             }
             else {
-                $this->view('template/head');
-                $this->view('system_operator/side_bar');
-                $this->view('template/top_bar');
                 $data = array(
                     'id_vehicle' => $id_vehicle,
                     'id_driver' => $id_driver,
                     'type' => $type,
                     'brand' => $brand
                 );
-                $this->view('system_operator/add_vehicle', $data, $error);
+                $this->loadView($data,$error);
             }
             $this->db_close($dbc);
         }
         else {
-            $this->view('system_operator/add_vehicle');
+            $this->loadView();
         }
 
     }
@@ -140,6 +134,31 @@ class VehicleController extends Controller{
             $this->view('system_operator/vehicle_entry_records');
         }
 
+    }
+
+    public function getVehicleAuto() {
+        if (isset($_POST['query'])) {
+            $model = $this->model('VehicleModel');
+            $result = $model->getVehicleNames();
+            $output = "<ul class='w3-ul w3-hoverable'>";
+            if (mysqli_num_rows($result) > 0) {
+                while ($row = mysqli_fetch_array($result)) {
+                    $output .= '<li>' . $row['registration_no'] . "</li>";
+                }
+            }
+            else {
+                $output .= "<li><i>No vehicle match above license plate</i></li>";
+            }
+            $output .= "</ul>";
+            echo $output;
+        }
+    }
+
+    private function loadView($data=[],$error=[]) {
+        $this->view('template/head');
+        $this->view('system_operator/side_bar');
+        $this->view('template/top_bar');
+        $this->view('system_operator/add_vehicle',$data, $error);
     }
 
 }

@@ -72,4 +72,12 @@ class VehicleModel extends Controller {
         }
     }
 
+    public function getVehicleNames() {
+        $dbc = $this->db_connect();
+        $query = "SELECT registration_no FROM vehicle WHERE registration_no LIKE '%" . $_POST['query'] . "%'";
+        $result = mysqli_query($dbc,$query) or die($dbc);
+        $this->db_close($dbc);
+        return $result;
+    }
+
 }

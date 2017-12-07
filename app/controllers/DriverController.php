@@ -134,7 +134,6 @@ class DriverController extends Controller{
     }
 
     public function getDriverAuto() {
-        $dbc = $this->db_connect();
         if (isset($_POST['query'])) {
             $model = $this->model('DriverModel');
             $result = $model->getDriverNames();
@@ -148,6 +147,16 @@ class DriverController extends Controller{
                 $output .= "<li><i>No driver found</i></li>";
             }
             $output .= "</ul>";
+            echo $output;
+        }
+    }
+
+    public function getDriverFromReg() {
+        if (isset($_POST['query'])) {
+            $model = $this->model('DriverModel');
+            $result = $model->getDriverNameFromReg();
+            $row = mysqli_fetch_array($result);
+            $output = $row['driver_name'];
             echo $output;
         }
     }

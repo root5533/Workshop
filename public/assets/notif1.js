@@ -64,9 +64,10 @@ function validatePassKey(tb) {
     console.log("pass key");
     var variable = tb.id;
     var val = tb.value;
+    val = val.trim();
     var name = variable.slice(0,-1);
     var number = variable.slice(-1);
-    if (variable.length >= 1) {
+    if (val.length >= 1) {
         var nextElement = name + (+number+1);
         document.getElementById(nextElement).focus();
     }
