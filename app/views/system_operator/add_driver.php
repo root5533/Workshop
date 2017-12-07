@@ -69,6 +69,9 @@
         ?>
     </div>
 
+
+<!--    main body content-->
+
     <div class="w3-row-padding">
         <div class="w3-container w3-margin-bottom">
             <div class="w3-container w3-white w3-padding-large">

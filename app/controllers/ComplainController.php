@@ -63,9 +63,16 @@ class ComplainController extends Controller{
                 elseif ($result == 5) {
                     $data = array('message' => 'The vehicle does not exist');
                 }
+                $this->view('template/head');
+                $this->view('system_operator/side_bar');
+                $this->view('template/top_bar');
                 $this->view('system_operator/add_jobs',$data, []);
             }
+
             else {
+                $this->view('template/head');
+                $this->view('system_operator/side_bar');
+                $this->view('template/top_bar');
                 $data = array(
                     'complain_type' => $complain_type,
                     'description' => $description,
