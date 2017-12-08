@@ -7,7 +7,7 @@ class JobModel extends Controller{
         $dbc = $this->db_connect();
         //check for existing driver
         $string = $data['job_applicant'];
-        $query1 = "SELECT * FROM driver WHERE driver_name LIKE '%$string%' LIMIT 1";
+        $query1 = "SELECT * FROM driver WHERE name LIKE '%$string%' LIMIT 1";
         $result1 = mysqli_query($dbc, $query1) or die(mysqli_error($dbc));
         //check for existing vehicle
         $query2 = "select * from vehicle where registration_no='" . $data['id_vehicle'] . "' limit 1";
@@ -19,17 +19,32 @@ class JobModel extends Controller{
             while ($row2 = mysqli_fetch_array($result2)){
                 $id_2 = $row2['id'];
             }
+
+
+            //insert to job table
             $query = "insert into jobentry(id_vehicle,date,description,job_applicant)" .
                 "values('" . $id_2 . "', '" . $data['date'] . "', '" . $data['description'] . "', '" . $id_1 . "')";
             $result = mysqli_query($dbc, $query) or die(mysqli_error($dbc));
-            if ($result) {
-                $state = 1; //successful insert -> 1
-            }
-            else {
-                $state = 2; // unsuccessful result -> 2
-            }
-            return $state;
+
+            //get job id
+            $query2 = "SELECT id FROM jobentry WHERE date='" . $data['date']. "'";
+            $jobResult = mysqli_query($dbc,$query2) or die(mysqli_error($dbc));
+            $row = mysqli_fetch_array($jobResult);
+            $jobId = $row['id'];
+
+            //insert to engineer comments table
+            $subject = "New job entry created";
+            $text = "Vehicle : " . $data['id_vehicle'] . "</li><li>Owner : " . $data['job_applicant'] ;
+            $get = "JobController/pass_job_id/".$jobId;
+
+            $comment_query = "INSERT INTO engineercomments(comment_subject,comment_text,get_request) VALUES('$subject','$text','$get')";
+
+            $result = mysqli_query($dbc,$comment_query) or die(mysqli_error($dbc));
+
+            //check state
             $this->db_close($dbc);
+            return;
+
         }
         else {
             if(mysqli_num_rows($result1)==0 and mysqli_num_rows($result2)==0){

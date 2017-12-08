@@ -12,7 +12,7 @@
                 </div>
                 <div class="col-sm-2 w3-padding-large">
                     <h4 style="margin-bottom: 0px;">
-                        <a href="<?php echo $GLOBALS['base_url']; ?>/loginCon/signout" style="text-decoration: none;color: white;">
+                        <a href="<?php echo $GLOBALS['base_url']; ?>/LoginController/signout" style="text-decoration: none;color: white;">
                             <span class="glyphicon glyphicon-log-out"></span> Sign Out
                         </a></h4>
                 </div>

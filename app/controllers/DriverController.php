@@ -140,7 +140,7 @@ class DriverController extends Controller{
             $output = "<ul class='w3-ul w3-hoverable'>";
             if (mysqli_num_rows($result) > 0) {
                 while ($row = mysqli_fetch_array($result)) {
-                    $output .= '<li>' . $row['driver_name'] . "</li>";
+                    $output .= '<li>' . $row['name'] . "</li>";
                 }
             }
             else {
@@ -156,7 +156,7 @@ class DriverController extends Controller{
             $model = $this->model('DriverModel');
             $result = $model->getDriverNameFromReg();
             $row = mysqli_fetch_array($result);
-            $output = $row['driver_name'];
+            $output = $row['name'];
             echo $output;
         }
     }

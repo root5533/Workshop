@@ -74,7 +74,7 @@
                     <div class="col-md-9 col-sm-12">
                         <div class="w3-container w3-teal"> <h3>New Job Entry</h3> </div>
                         <div class="col-sm-8" style="padding-top: 10px;">
-                            <form action="<?php echo $GLOBALS['base_url']; ?>/JobController/open_job_entry" method="post">
+                            <form action="<?php echo $GLOBALS['base_url']; ?>/JobController/open_job_entry" method="post" autocomplete="off">
                                 <div class="form-group">
                                     <label for="id_vehicle">Vehicle Registration Number</label>
                                     <input type="text" id="vehicle" name="vehicle" class="form-control" value="<?php if(isset($data['vehicle'])) { echo $data['vehicle'];} ?>" style="width: 25%;">
@@ -92,7 +92,7 @@
 
                                 <div class="form-group">
                                     <label for="date">Date</label>
-                                    <input class="form-control" type="text" value="<?php date_default_timezone_set("Asia/Colombo"); echo date("Y / m / d     h:i:s a")?>"
+                                    <input class="form-control" type="text" value="<?php date_default_timezone_set("Asia/Colombo"); echo date("Y-m-d H:i:s")?>"
                                            id="date" name="date"  style="width: 35%;" readonly>
                                 </div>
                                 <div class="form-group">

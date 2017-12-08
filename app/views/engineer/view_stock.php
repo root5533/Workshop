@@ -83,7 +83,6 @@
 <script>
 
     allStock = document.getElementById('stockList').innerHTML;
-    console.log(allStock);
 
     $(document).ready(function() {
         $('#item').keyup(function() {
@@ -122,6 +121,13 @@
             }
         });
     });
+
+
+    document.getElementById("notifButton").addEventListener("click", loadDoc);
+
+    load_notification();
+
+    window.setInterval(test, 5000);
 
 </script>
 

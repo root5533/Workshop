@@ -19,7 +19,7 @@
                                     <label for="id_driver">Driver Name</label>
                                     <input type="text" class="form-control" id="driver" placeholder="Type here" name="id_driver" style="width: 50%;"
                                         <?php if (isset($data['id_driver'])) {echo "value='"; print_r($data['id_driver']); echo "'";} ?>>
-                                    <div id="driverList" class="w3-container"></div>
+                                    <div id="driverList" class="w3-container" style="padding: 0px;width: 50%;"></div>
                                     <?php
                                     if(isset($error['id_driver_error'])) {
                                         echo "<div class='w3-panel w3-red'><h5>" . $error['id_driver_error'] . "</h5></div>";

@@ -14,13 +14,14 @@ function loadDoc() {
     load_notification("yes");
 }
 
+
 function load_notification(view='') {
     console.log("loading notifications");
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
             var data = JSON.parse(this.responseText);
-//                console.log(data);
+            console.log(data);
             document.getElementById("notification").innerHTML = data.notification;
             if (data.unseen_notification > 0) {
                 document.getElementById("count").innerHTML = data.unseen_notification;
@@ -31,7 +32,7 @@ function load_notification(view='') {
         }
     };
 
-    xhttp.open("POST", "/wshop/public/notificationCon/openJob", true);
+    xhttp.open("POST", "/wshop/public/NotificationController/openJob", true);
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xhttp.send("view="+view);
 
@@ -46,6 +47,7 @@ function load_notification(view='') {
     // a.href = data['title'];
     // ------------------------
 }
+
 
 function test() {
     load_notification();

@@ -7,7 +7,7 @@ class VehicleModel extends Controller {
         $dbc = $this->db_connect();
         //check for existing driver
         $string = $data['id_driver'];
-        $query1 = "SELECT * FROM driver WHERE driver_name LIKE '%$string%' LIMIT 5";
+        $query1 = "SELECT * FROM driver WHERE name LIKE '%$string%' LIMIT 5";
         $result1 = mysqli_query($dbc, $query1) or die(mysqli_error($dbc));
         if (mysqli_num_rows($result1) == 1) {
             while ($row = mysqli_fetch_array($result1)){
@@ -31,7 +31,7 @@ class VehicleModel extends Controller {
             }
             elseif (mysqli_num_rows($result1)>0){
 //                $state = 4;
-                $query2 = "SELECT name FROM driver WHERE driver_name LIKE '%$string%' LIMIT 5";
+                $query2 = "SELECT name FROM driver WHERE name LIKE '%$string%' LIMIT 5";
                 $result2 = mysqli_query($dbc, $query2) or die(mysqli_error($dbc));
                 $result = mysqli_fetch_array($result2);
                 return $result;

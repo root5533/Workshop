@@ -5,7 +5,7 @@ define('BASE_URL', 'http://example.com');
 class app
 {
 
-    protected $controller = 'home';
+    protected $controller = 'LoginController';
     protected $method = 'index';
     protected $params = [];
 

@@ -28,8 +28,6 @@ class JobController extends Controller{
                     'message' => 'ok'
                 );
                 $this->loadView($data);
-//                $result = $model->so_insert($data);
-//                $this->view("maintenance/test", $data , []);
 
             }
             else {
