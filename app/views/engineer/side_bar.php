@@ -4,6 +4,11 @@
     <img src='<?php echo $GLOBALS['base_url']; ?>/images/cmc_logo.png' style='width:45%;margin-left: 54px;margin-top: 5px;' class='w3-round'><br><br>
     <h4 class="w3-padding-small"><b>CMC WorkShop Management System</b></h4>
     <a href="<?php echo $GLOBALS['base_url']; ?>/ENController/load_view/view_stock" class="w3-bar-item w3-button">View Stock</a>
+    <a href="<?php echo $GLOBALS['base_url']; ?>/ENController/load_view/stock_request" class="w3-bar-item w3-button">Stock Request</a>
+    <a href="<?php echo $GLOBALS['base_url']; ?>/ENController/load_view/assign_jobs" class="w3-bar-item w3-button">Assign Jobs</a>
+    <a href="<?php echo $GLOBALS['base_url']; ?>/ENController/load_view/view_jobs" class="w3-bar-item w3-button">View Jobs</a>
+
+
 
 
 </div>

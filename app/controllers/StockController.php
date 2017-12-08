@@ -38,4 +38,29 @@ class StockController extends Controller {
         }
     }
 
+    public function addStockItemTableRows(){
+
+        if(isset($_POST['add_rows'])){
+
+
+
+            $rows = trim($_POST['rows']);
+
+            $data = array('rows' => $rows);
+
+            $this->view('engineer/head');
+            $this->view('engineer/side_bar');
+            $this->view('engineer/top_bar');
+            $this->view('engineer/stock_request',$data,[]);
+
+        }else{
+
+            $this->view('engineer/head');
+            $this->view('engineer/side_bar');
+            $this->view('engineer/top_bar');
+            $this->view('engineer/stock_request');
+
+        }
+    }
+
 }

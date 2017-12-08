@@ -35,7 +35,17 @@ class ENController extends Controller {
             if ($view == "view_stock") {
                 $data = $this->getStock();
                 $this->view('engineer/view_stock', $data);
-            } else {
+            }
+            else if($view == "stock_request") {
+                $this->view('engineer/stock_request');
+            }
+            else if($view == 'assign_jobs') {
+                $this->view('engineer/assign_jobs');
+            }
+            else if($view == 'view_jobs') {
+                $this->view('engineer/view_jobs');
+            }
+            else {
                 $data = $this->getStock();
                 $this->view('engineer/view_stock', $data);
             }

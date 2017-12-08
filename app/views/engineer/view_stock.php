@@ -103,7 +103,7 @@
                 $('#stockList').html(allStock);
             }
         });
-        $(document).on('click','li',function() {
+        $(document).on('click','#itemList li',function() {
             if ($(this).text() != 'No items match') {
                 var query2 = $(this).text();
                 $('#item').val(query2);
