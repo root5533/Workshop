@@ -53,7 +53,8 @@ class JobController extends Controller{
                 'id_vehicle' => $_POST['id_vehicle'],
                 'description' => $_POST['description'],
                 'date' => $_POST['date'],
-                'job_applicant' => $_POST['job_applicant']
+                'job_applicant' => $_POST['job_applicant'],
+                'user' => $_SESSION['user']
             );
             $result = $model->so_insert($data);
             $data['display'] = "Job successfully created";
@@ -159,10 +160,6 @@ class JobController extends Controller{
 //                    $data = array('message' => 'The vehicle does not exist');
 //                }
 
-
-
-
-
             }
             else {
                 $data = array(
@@ -192,6 +189,42 @@ class JobController extends Controller{
 
     }
 
+    public function getJobAuto() {
+        if (isset($_POST['query'])) {
+            $model = $this->model('JobModel');
+            $result = $model->getJobs();
+//            $output = "<ul class='w3-ul w3-hoverable'>";
+            $output =
+                "<tr class='w3-teal'>" .
+                    "<th>Job Applicant</th>" .
+                    "<th>Vehicle Registration No.</th>" .
+                    "<th>Description</th>" .
+                    "<th>User</th>" .
+                "</tr>";
+
+            $base = $GLOBALS['base_url'];
+            if (mysqli_num_rows($result) > 0) {
+                while ($row = mysqli_fetch_array($result)) {
+                    $output .=
+                        "<tr onclick=\"document.location = '$base/JobController/pass_job_id/" . $row['id'] . "';\">" .
+                            "<td>" . $row['name'] . "</td>" .
+                            "<td>" . $row['registration_no'] . "</td>" .
+                            "<td>" . $row['description'] . "</td>" .
+                            "<td>" . $row['user'] . "</td>" .
+                        "</tr>";
+                }
+            }
+            else {
+                $output .=
+                    "<tr>" .
+                        "<td>No items match</td>" .
+                    "</tr>";
+            }
+            $output .= "</table>";
+            echo $output;
+        }
+    }
+
     private function loadView($data=[],$error=[]) {
         $this->view('template/head');
         $this->view('system_operator/side_bar');
@@ -199,6 +232,9 @@ class JobController extends Controller{
         $this->view('system_operator/add_jobs', $data, $error);
     }
 
+
+
+    //job search from view_jobs form
     public function engineer_view_job_entry() {
 
         if(isset($_POST['submit'])) {

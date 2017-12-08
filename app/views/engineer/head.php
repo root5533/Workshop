@@ -23,13 +23,16 @@
 <script src='<?php echo $GLOBALS['base_url']; ?>/assets/custom.css' type='text/javascript'></script>
 
 <style>
-    body,h1,h2,h3,h4,h5,h6 {font-family: 'Raleway', sans-serif}
+    body,h1,h2,h3,h4,h5,h6 {
+        font-family: 'Raleway', sans-serif;
+    }
 
     #notification a {
         color: black;
         text-decoration: none;
+        font-size: 10px;
     }
-    
+
 </style>
 
 <body>

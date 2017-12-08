@@ -22,8 +22,8 @@ class JobModel extends Controller{
 
 
             //insert to job table
-            $query = "insert into jobentry(id_vehicle,date,description,job_applicant)" .
-                "values('" . $id_2 . "', '" . $data['date'] . "', '" . $data['description'] . "', '" . $id_1 . "')";
+            $query = "insert into jobentry(id_vehicle,date,description,job_applicant,user)" .
+                "values('" . $id_2 . "', '" . $data['date'] . "', '" . $data['description'] . "', '" . $id_1 . "','" . $data['user'] . "')";
             $result = mysqli_query($dbc, $query) or die(mysqli_error($dbc));
 
             //get job id
@@ -316,6 +316,15 @@ class JobModel extends Controller{
         }
 
 
+    }
+
+    public function getJobs() {
+        $dbc = $this->db_connect();
+        $query = "SELECT * FROM jobentry,vehicle,driver WHERE jobentry.id_vehicle = vehicle.id AND jobentry.job_applicant = driver.id AND " .
+            $_POST['query2'] . " LIKE '%" . $_POST['query'] . "%'";
+        $result = mysqli_query($dbc,$query) or die($dbc);
+        $this->db_close($dbc);
+        return $result;
     }
 
 
