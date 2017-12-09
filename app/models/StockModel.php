@@ -83,4 +83,19 @@ class StockModel extends Controller {
         return $data;
     }
 
+    public function checkStockReceived($id) {
+        $dbc = $this->db_connect();
+        $query = "SELECT stock_id,amount FROM jobstock WHERE job_id='$id' AND issue=0";
+        $result = mysqli_query($dbc,$query);
+        if(mysqli_num_rows($result) > 0) {
+            while ($row = mysqli_fetch_array($result)) {
+                $data[] = $row;
+            }
+        }
+        else {
+            $data = 1;
+        }
+        return $data;
+    }
+
 }

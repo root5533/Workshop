@@ -478,6 +478,113 @@ class JobController extends Controller{
 
     }
 
+
+    public function acceptJob($job_id,$user){
+        if ($job_id != '' and $user != '') {
+            $this->view('template/head');
+            $this->view('technical_officer/side_bar');
+            $this->view('technical_officer/top_bar');
+            $model = $this->model('StockModel');
+            $result = $model->checkStockReceived($job_id);
+            $model2 = $this->model('JobModel');
+            $result2 = $model2->getAssignedJobs($_SESSION['user']);
+            $data['id'] = $job_id;
+            $data['username'] = $user;
+            $data['table'] = $result2;
+            if ($result == 1) {
+                $data['message'] = 'ok';
+            }
+            else {
+                $data['stock'] = $result;
+            }
+            $this->view('technical_officer/view_assigned_jobs',$data);
+        }
+    }
+
+    public function updateJobAccept(){
+
+        if(isset($_POST['submit'])) {
+            $data = array(
+                'id' => $_POST['id'],
+                'username' => $_POST['username']
+            );
+            $model = $this->model('JobModel');
+            $result = $model->updateStatus($data);
+
+            if($result == 1){
+                $display = "Job accepted";
+            }
+            else {
+                $display = "Job status update unsuccessful";
+            }
+
+            $this->view('template/head');
+            $this->view('technical_officer/side_bar');
+            $this->view('technical_officer/top_bar');
+
+            $model = $this->model('JobModel');
+            $result = $model->getAssignedJobs($_SESSION['user']);
+            $data = array(
+                'display' => $display,
+                'table' => $result
+            );
+            $this->view('technical_officer/view_assigned_jobs',$data);
+        }
+
+    }
+
+    public function closeJob(){
+
+        if(isset($_POST['submit'])) {
+
+            $data = array(
+                'id' => $_POST['id'],
+                'username' => $_POST['username']
+            );
+
+            $model = $this->model('JobModel');
+            $result = $model->updateJobStatus($data);
+
+            if($result==1){
+                $data['display'] = "Job status updated as closed";
+            } elseif ($result==2){
+                $data['display'] = "Job status update unsuccessful";
+            }
+
+            $this->loadCloseJobs($data);
+
+        }
+        else {
+            $this->loadCloseJobs();
+        }
+    }
+
+    public function viewOngoingJobs($user){
+
+        $data = array('username' => $user);
+
+        $model = $this->model('JobModel');
+        $result = $model->to_view_ongoing_jobs($data);
+
+        if ($result==1) {
+
+            $error['empty_error'] = "There are no ongoing jobs yet!";
+
+            $this->view('template/head');
+            $this->view('technical_officer/side_bar');
+            $this->view('technical_officer/top_bar');
+            $this->view('technical_officer/close_jobs',[],$error);
+
+        } else {
+            $this->view('template/head');
+            $this->view('technical_officer/side_bar');
+            $this->view('technical_officer/top_bar');
+            $this->view('technical_officer/close_jobs',$result,[]);
+        }
+
+
+    }
+
     public function to_view_job_entry($user) {
 
         if(isset($_POST['view'])){
@@ -509,6 +616,43 @@ class JobController extends Controller{
 
         }
 
+    }
+
+    public function to_close_job($job_id,$user){
+
+        if(is_numeric($job_id)){
+
+            $data = array(
+                'id' => $job_id,
+                'username' => $user,
+                'message' => 'ok'
+            );
+
+
+//            $model = $this->model('JobModel');
+//            $result = $model->to_view($data);
+
+            $this->loadCloseJobs($data);
+
+        } else{
+            $this->loadCloseJobs();
+        }
+
+    }
+
+    private function loadViewAssignJobs($data=[],$error=[]){
+        $this->view('template/head');
+        $this->view('technical_officer/side_bar');
+        $this->view('technical_officer/top_bar');
+
+        $this->view('technical_officer/view_assigned_jobs', $data, $error);
+    }
+
+    private function loadCloseJobs($data=[],$error=[]){
+        $this->view('template/head');
+        $this->view('technical_officer/side_bar');
+        $this->view('technical_officer/top_bar');
+        $this->view('technical_officer/close_jobs', $data, $error);
     }
 
     private function loadEngineerView($location='view_stock',$data=[],$error=[]) {
