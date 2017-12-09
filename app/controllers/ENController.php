@@ -45,6 +45,12 @@ class ENController extends Controller {
             else if($view == 'view_jobs') {
                 $this->view('engineer/view_jobs');
             }
+            else if($view == 'stock_view_jobs') {
+                $this->view('engineer/stock_view_jobs');
+            }
+            else if($view == 'view_job_progress') {
+                $this->view('engineer/view_job_progress');
+            }
             else {
                 $data = $this->getStock();
                 $this->view('engineer/view_stock', $data);
@@ -63,42 +69,5 @@ class ENController extends Controller {
         return $result;
     }
 
-//    public function loadNotifications() {
-//        if (isset($_POST["view"])) {
-//            $connect = $this->db_connect();
-//            if ($_POST["view"] != '') {
-//                $update_query = "UPDATE engineercomments SET comment_status=1 WHERE comment_status=0";
-//                mysqli_query($connect, $update_query) or die(mysqli_error($connect));
-//            }
-//            $query = "SELECT * FROM engineercomments ORDER BY comment_id DESC LIMIT 10";
-//            $result = mysqli_query($connect, $query) or die(mysqli_error($connect));
-//            $output = '';
-//
-//            if (mysqli_num_rows($result) > 0) {
-//                while ($row = mysqli_fetch_array($result)) {
-//                    $output .= '
-//                        <li>
-//                        <a href="#">
-//                            <strong>' . $row["comment_subject"] . '</strong><br />
-//                            <small><em><li>' . $row["comment_text"] . '</li></em></small>
-//                        </a>
-//                        </li>
-//                        ';
-//                }
-//            } else {
-//                $output .= '<li><a href="#" class="text-bold text-italic">No Notification Found</a></li>';
-//            }
-//
-//            $query_1 = "SELECT * FROM engineercomments WHERE comment_status=0";
-//            $result_1 = mysqli_query($connect, $query_1) or die(mysqli_error($connect));
-//            $count = mysqli_num_rows($result_1);
-//            $data = array(
-//                'notification' => $output,
-//                'unseen_notification' => $count
-//            );
-//
-//            echo json_encode($data);
-//        }
-//    }
 
 }

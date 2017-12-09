@@ -4,7 +4,7 @@ function myfunction() {
 }
 
 function loadDoc() {
-    console.log("loadDoc call")
+    // console.log("loadDoc call")
     var x = document.getElementById("notification");
     if (x.style.display === "none") {
         x.style.display = "block";
@@ -16,12 +16,12 @@ function loadDoc() {
 
 
 function load_notification(view='') {
-    console.log("loading notifications");
+    // console.log("loading notifications");
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
             var data = JSON.parse(this.responseText);
-            console.log(data);
+            // console.log(data);
             document.getElementById("notification").innerHTML = data.notification;
             if (data.unseen_notification > 0) {
                 document.getElementById("count").innerHTML = data.unseen_notification;

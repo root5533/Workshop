@@ -1,10 +1,11 @@
 
 
     <div class="w3-container w3-padding-large">
-    <h2 id="title" style="display: none;"><b>Assign Jobs</b></h2>
+
+
 
         <?php
-
+        //////////////////////////////////////////////////////////////////////////////////
         //confirmation modal
         if (isset($data['message'])) {
             if ($data['message'] == 'ok') { ?>
@@ -47,15 +48,15 @@
 
             <?php }
         }
-
+        //////////////////////////////////////////////////////////////////////////////////
         ?>
 
         <?php
         //display result after confirmation
         if(isset($data['display'])) { ?>
 
-            <div class="w3-panel w3-teal">
-                <p><h3><?php echo $data['display']; ?></h3></p>
+            <div class="w3-panel w3-red">
+                <p><h4><?php echo $data['display']; ?></h4></p>
             </div>
 
         <?php }
@@ -71,32 +72,70 @@
             <div class="w3-container w3-white w3-padding-large">
                 <div class="row-content">
                     <div class="col-md-9 col-sm-12">
-                        <div class="w3-container w3-teal w3-margin-bottom"><h3>Maintenance Section - Assign Jobs</h3></div>
+                        <div class="w3-container w3-teal w3-margin-bottom"><h3>Assign Jobs</h3></div>
                         <div class="col-sm-8">
-                            <form action="<?php echo $GLOBALS['base_url']; ?>/JobController/assign_jobs" method="post">
+                            <form action="<?php echo $GLOBALS['base_url']; ?>/JobController/assign_jobs" method="post" autocomplete="off">
+
+                                <ul class="w3-ul w3-margin-bottom">
+                                    <li><h4>Job Details</h4></li>
+                                    <li>
+                                        <div class="w3-container">
+                                            <div class="col-sm-5">
+                                                Job Applicant / Driver <b>:</b>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <?php echo $data['driver']; ?>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="w3-container">
+                                            <div class="col-sm-5">
+                                                Vehicle Number <b>:</b>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <?php echo $data['vehicle']; ?>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="w3-container">
+                                            <div class="col-sm-5">
+                                                Job Description <b>:</b>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <?php echo $data['description']; ?>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="w3-container">
+                                            <div class="col-sm-5">
+                                                Job Open Date <b>:</b>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <?php echo $data['date']; ?>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li></li>
+                                </ul>
+
                                 <div class="form-group">
-                                    <label for="id">Job ID</label>
-                                    <input type="text" class="form-control" id="id" placeholder="Type here" name="id"
-                                        <?php if (isset($data['id'])) {echo "value='"; print_r($data['id']); echo "'";} ?>>
-                                    <?php
-                                    if(isset($error['id_error'])) {
-                                        echo "<div class='' style='color: indianred'>" . $error['id_error'] . "</div>";
-                                    } ?>
-                                </div>
-                                <div class="form-group">
-                                    <label for="supervisor">Supervisor</label>
-                                    <input type="text" class="form-control" id="supervisor" placeholder="Type here" name="supervisor"
-                                        <?php if (isset($data['supervisor'])) {echo "value='"; print_r($data['supervisor']); echo "'";} ?>>
+                                    <input type="hidden" name="id" value="<?php echo $data['id']; ?>">
+                                    <label for="supervisor">Supervisor to be Assigned</label>
+                                    <input type="text" class="form-control" id="supervisor" placeholder="Type here" name="supervisor" style="width: 50%">
                                     <?php
                                     if(isset($error['supervisor_error'])) {
-                                        echo "<div class='' style='color: indianred'>" . $error['supervisor_error'] . "</div>";
+                                        echo "<div class='w3-panel w3-red'><h5>" . $error['supervisor_error'] . "</h5></div>";
                                     } ?>
+                                    <div id="superList" class="w3-container" style="padding: 0px;width: 50%;"></div>
                                 </div>
 
 
                                 <div class="form-group">
-                                    <button type="submit" class="w3-button w3-teal" name="submit">Submit</button>
-                                    <button type="reset" class="w3-button w3-teal">Reset Form</button>
+                                    <button type="reset" class="w3-button w3-teal w3-hover-gray">Reset Form</button>
+                                    <button type="submit" class="w3-button w3-teal w3-hover-gray" name="submit" style="float: right; width: 25%;">Submit</button>
                                 </div>
                             </form>
                         </div>
@@ -126,24 +165,33 @@
         load_notification();
 
         window.setInterval(test, 5000);
-        // Script to open and close sidebar
-
-        //button active mode
-        var page_title = document.getElementById("title").innerHTML;
 
 
-        if(page_title.indexOf("View Jobs")>-1){
-            document.getElementById("btn_view_jobs").setAttribute("class","w3-bar-item w3-button w3-teal");
-        }
-        else if(page_title.indexOf("View Stock")>-1){
-            document.getElementById("btn_view_jobs").setAttribute("class","w3-bar-item w3-button w3-teal");
-        }
-        else if(page_title.indexOf("Assign Jobs")>-1){
-            document.getElementById("btn_assign_jobs").setAttribute("class","w3-bar-item w3-button w3-teal");
-        }
-        else if(page_title.indexOf("Stock Request")>-1){
-            document.getElementById("btn_stock_request").setAttribute("class","w3-bar-item w3-button w3-teal");
-        }
+        $(document).ready(function() {
+            $('#supervisor').keyup(function() {
+                var query = $(this).val();
+                if (query != '') {
+                    $.ajax({
+                        url:"<?php echo $GLOBALS['base_url']; ?>/EmployeeController/getEmployeeAuto",
+                        method:"POST",
+                        data:{query:query},
+                        success:function(data) {
+                            $('#superList').fadeIn(100);
+                            $('#superList').html(data);
+                        }
+                    });
+                }
+                else {
+                    $('#superList').fadeOut(100);
+                }
+            });
+            $(document).on('click','#superList li',function() {
+                if ($(this).text() != 'No match found') {
+                    $('#supervisor').val($(this).text());
+                    $('#superList').fadeOut(100);
+                }
+            });
+        });
 
 
 

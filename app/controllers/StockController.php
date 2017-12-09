@@ -38,28 +38,82 @@ class StockController extends Controller {
         }
     }
 
-    public function addStockItemTableRows(){
+    public function stock_request_view($job_id,$stock='',$amount='',$error=[]) {
+        $model = $this->model('JobModel');
+        $result = $model->getJobDetails($job_id);
+        $model2 = $this->model('StockModel');
+        $result2 = $model2->getJobStock($job_id);
+        $row = mysqli_fetch_array($result);
+        $msg = '';
+        $display = '';
+//        if ($state == 1) {
+//            $display = "There was a problem in making the request";
+//        }
+        if ($stock != '' AND $amount != '') {
+            $msg = 'ok';
+        }
+        $data = array(
+            'vehicle' => $row['registration_no'],
+            'driver' => $row['name'],
+            'description' => $row['description'],
+            'date' => $row['date'],
+            'id' => $job_id,
+            'supervisor' => $row['supervisor'],
+            'message' => $msg,
+            'stock' => $stock,
+            'amount' => $amount,
+            'display' => $display,
+            'requested' => $result2
+        );
 
-        if(isset($_POST['add_rows'])){
+        $this->view('template/head');
+        $this->view('engineer/side_bar');
+        $this->view('engineer/top_bar');
+        $this->view('engineer/stock_request',$data,$error);
 
+    }
 
+    public function addStockItem(){
+        if(isset($_POST['submit'])) {
+            $stock = trim($_POST['stock']);
+            $amount = trim($_POST['amount']);
+            $id = $_POST['jobid'];
+            $stock_id = substr($stock,-5);
+            if (empty($amount) or $amount <= 0) {
+                $error['amount'] = "*Please insert an amount greater than 0";
+            }
+            $model = $this->model('StockModel');
+            $result = $model->checkStock($stock_id);
+            if ($result == 0 or empty($stock)) {
+                $error['stock'] = "*Please insert a valid stock item $stock_id";
+            }
 
-            $rows = trim($_POST['rows']);
+            if (isset($error) == FALSE) {
+                $this->stock_request_view($id,$stock,$amount);
+            }
+            else {
+                $this->stock_request_view($id,'','',$error);
+            }
+        }
+        else {
+            header('location: ' . $GLOBALS['base_url'] . '/ENController/load_view/stock_view_jobs');
+        }
+    }
 
-            $data = array('rows' => $rows);
-
-            $this->view('engineer/head');
-            $this->view('engineer/side_bar');
-            $this->view('engineer/top_bar');
-            $this->view('engineer/stock_request',$data,[]);
-
-        }else{
-
-            $this->view('engineer/head');
-            $this->view('engineer/side_bar');
-            $this->view('engineer/top_bar');
-            $this->view('engineer/stock_request');
-
+    public function insertStockRequest() {
+        if(isset($_POST['submit'])) {
+            $data = array(
+                'stock' => substr(trim($_POST['stock']),-5),
+                'amount' => trim($_POST['amount']),
+                'id' => $_POST['id']
+            );
+            $model = $this->model('StockModel');
+            $result = $model->insertJobStock($data);
+            $id = $data['id'];
+            $this->stock_request_view($id);
+        }
+        else {
+            header('location: ' . $GLOBALS['base_url'] . '/ENController/load_view/stock_view_jobs');
         }
     }
 

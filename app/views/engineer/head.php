@@ -10,7 +10,7 @@
 
 <link rel='stylesheet' href='/wshop/public/assets/w3.css'>
 
-<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Raleway'>
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=PT Sans'>
 
 <link rel='stylesheet' href='/wshop/public/assets/css/bootstrap.css'>
 
@@ -24,13 +24,13 @@
 
 <style>
     body,h1,h2,h3,h4,h5,h6 {
-        font-family: 'Raleway', sans-serif;
+        font-family: 'PT Sans', sans-serif;
     }
 
     #notification a {
         color: black;
         text-decoration: none;
-        font-size: 10px;
+        font-size: small;
     }
 
 </style>

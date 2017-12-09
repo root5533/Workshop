@@ -32,6 +32,9 @@ class LoginController extends Controller {
                     if ($type == "EN") {
                         header("location: $base/ENController");
                     }
+                    if ($type == "TO") {
+                        header("location: $base/TOController");
+                    }
                     return;
                 }
                 else {

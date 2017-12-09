@@ -189,10 +189,10 @@ class JobController extends Controller{
 
     }
 
-    public function getJobAuto() {
+    public function getJobAuto($state=0) {
         if (isset($_POST['query'])) {
             $model = $this->model('JobModel');
-            $result = $model->getJobs();
+            $result = $model->getJobs($state);
 //            $output = "<ul class='w3-ul w3-hoverable'>";
             $output =
                 "<tr class='w3-teal'>" .
@@ -204,15 +204,29 @@ class JobController extends Controller{
 
             $base = $GLOBALS['base_url'];
             if (mysqli_num_rows($result) > 0) {
-                while ($row = mysqli_fetch_array($result)) {
-                    $output .=
-                        "<tr onclick=\"document.location = '$base/JobController/pass_job_id/" . $row['id'] . "';\">" .
+                if ($state == 0) {
+                    while ($row = mysqli_fetch_array($result)) {
+                        $output .=
+                            "<tr onclick=\"document.location = '$base/JobController/pass_job_id/" . $row['jobid'] . "';\">" .
                             "<td>" . $row['name'] . "</td>" .
                             "<td>" . $row['registration_no'] . "</td>" .
                             "<td>" . $row['description'] . "</td>" .
                             "<td>" . $row['user'] . "</td>" .
-                        "</tr>";
+                            "</tr>";
+                    }
                 }
+                else if ($state == 1) {
+                    while ($row = mysqli_fetch_array($result)) {
+                        $output .=
+                            "<tr onclick=\"document.location = '$base/StockController/stock_request_view/" . $row['jobid'] . "';\">" .
+                            "<td>" . $row['name'] . "</td>" .
+                            "<td>" . $row['registration_no'] . "</td>" .
+                            "<td>" . $row['description'] . "</td>" .
+                            "<td>" . $row['user'] . "</td>" .
+                            "</tr>";
+                    }
+                }
+
             }
             else {
                 $output .=
@@ -371,64 +385,75 @@ class JobController extends Controller{
             $dbc = $this->db_connect();
             $id = trim($_POST['id']);
             $supervisor = trim($_POST['supervisor']);
-
-            if(empty($id)){
-                $error['id_error'] = "*Fill the Job ID (Select Job ID from view jobs)";
+            $emp = substr($supervisor,-4);
+            $model = $this->model('EmployeeModel');
+            $result = $model->checkTOExist($emp);
+            if ($result == 0) {
+                $error['supervisor_error'] = "*Supervisor does not exist";
             }
             if(empty($supervisor)){
                 $error['supervisor_error'] = "*Enter the supervisor name you wish to assign";
             }
-
             if (isset($error) == FALSE) {
 
                 $data = array(
                     'id' => $id,
-                    'supervisor' => $supervisor,
+                    'supervisor' => $emp,
                     'message' => 'ok'
                 );
 
-//                $model = $this->model('JobModel');
-//                $data = $model->so_view($data);
-
-                $this->view('engineer/head');
-                $this->view('engineer/side_bar');
-                $this->view('engineer/top_bar');
-                $this->view('engineer/assign_jobs',$data,[]);
-
-
+                $this->pass_job_id($id,$emp);
             }
             else {
-                $data = array(
-                    'search' => $id,
-                    'search_type' => $supervisor
-                );
-
-                $this->view('engineer/head');
-                $this->view('engineer/side_bar');
-                $this->view('engineer/top_bar');
-                $this->view('engineer/assign_jobs',[],$error);
+                $this->pass_job_id($id,'',$error);
             }
             $this->db_close($dbc);
         }
         else {
-            $this->view('engineer/head');
-            $this->view('engineer/side_bar');
-            $this->view('engineer/top_bar');
-            $this->view('engineer/assign_jobs');
+            $this->loadEngineerView('view_jobs');
         }
     }
 
-    public function pass_job_id($job_id){
+    public function pass_job_id($job_id,$sup_id='',$error=[]){
 
+        $model = $this->model('JobModel');
+        $result = $model->getJobDetails($job_id);
+        $row = mysqli_fetch_array($result);
+        $msg = '';
+        if($sup_id != '') {
+            $msg = 'ok';
+        }
         $data = array(
-            'id' => $job_id
+            'vehicle' => $row['registration_no'],
+            'driver' => $row['name'],
+            'description' => $row['description'],
+            'date' => $row['date'],
+            'id' => $job_id,
+            'supervisor' => $sup_id,
+            'message' => $msg
         );
 
-        $this->view('engineer/head');
-        $this->view('engineer/side_bar');
-        $this->view('engineer/top_bar');
-        $this->view('engineer/assign_jobs',$data,[]);
+        $this->loadEngineerView('assign_jobs',$data,$error);
+
     }
+
+//    public function stock_request_view($job_id,$error=[]) {
+//        $model = $this->model('JobModel');
+//        $result = $model->getJobDetails($job_id);
+//        $row = mysqli_fetch_array($result);
+//        $msg = '';
+//        $data = array(
+//            'vehicle' => $row['registration_no'],
+//            'driver' => $row['name'],
+//            'description' => $row['description'],
+//            'date' => $row['date'],
+//            'id' => $job_id,
+//            'supervisor' => $row['supervisor'],
+//            'message' => $msg
+//        );
+//
+//        $this->loadEngineerView('stock_request',$data,$error);
+//    }
 
     public function updateJob(){
 
@@ -439,24 +464,58 @@ class JobController extends Controller{
 
         $model = $this->model('JobModel');
         $result = $model->update_job($data);
-//                $this->view("maintenance/test", $data , []);
-
         if ($result == 1) {
-            $data = array('display' => 'Supervisor assigned successfully!');
+//            $data = array('display' => 'Supervisor assigned successfully!');
+            $id = $_POST['id'];
+            header('location: '.$GLOBALS['base_url'].'/StockController/stock_request_view/'.$id);
         }
         elseif ($result == 2) {
-            $data = array('display' => 'Problem adding job entry! Troubleshoot the database');
-        }
-        elseif ($result == 3) {
-            $data = array('display' => 'The employee does not exist');
+            $data = array('display' => 'There was a problem updating the database');
+            $this->loadEngineerView('view_jobs',$data);
         }
 
+
+
+    }
+
+    public function to_view_job_entry($user) {
+
+        if(isset($_POST['view'])){
+
+            $data = array('username' => $user);
+
+            $model = $this->model('JobModel');
+            $result = $model->to_view($data);
+
+            if ($result==1) {
+                $error['empty_error'] = "There are no ongoing jobs yet!";
+
+                $this->view('template/head');
+                $this->view('technical_officer/side_bar');
+                $this->view('technical_officer/top_bar');
+                $this->view('technical_officer/view_assigned_jobs',[],$error);
+            } else {
+                $this->view('template/head');
+                $this->view('technical_officer/side_bar');
+                $this->view('technical_officer/top_bar');
+                $this->view('technical_officer/view_assigned_jobs',$result,[]);
+            }
+        } else{
+
+            $this->view('template/head');
+            $this->view('technical_officer/side_bar');
+            $this->view('technical_officer/top_bar');
+            $this->view('technical_officer/view_assigned_jobs');
+
+        }
+
+    }
+
+    private function loadEngineerView($location='view_stock',$data=[],$error=[]) {
         $this->view('engineer/head');
         $this->view('engineer/side_bar');
         $this->view('engineer/top_bar');
-        $this->view('engineer/assign_jobs',$data,[]);
-
-
+        $this->view("engineer/$location",$data,$error);
     }
 
 

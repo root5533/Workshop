@@ -10,7 +10,7 @@
 
 <link rel='stylesheet' href='/wshop/public/assets/w3.css'>
 
-<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Raleway'>
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=PT Sans'>
 
 <link rel='stylesheet' href='/wshop/public/assets/css/bootstrap.css'>
 
@@ -23,7 +23,7 @@
 <script src='<?php echo $GLOBALS['base_url']; ?>/assets/custom.css' type='text/javascript'></script>
 
 <style>
-    body,h1,h2,h3,h4,h5,h6 {font-family: 'Raleway', sans-serif}
+    body,h1,h2,h3,h4,h5,h6 {font-family: 'PT Sans', sans-serif}
 </style>
 
 <body>
