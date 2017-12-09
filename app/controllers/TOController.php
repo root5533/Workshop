@@ -41,8 +41,17 @@ class TOController extends Controller{
                 );
                 $this->view('technical_officer/view_assigned_jobs',$data);
             }
+            if ($view == 'view_stock') {
+                $data = $this->getStock();
+                $this->view('technical_officer/view_stock', $data);
+            }
             else {
-                $this->view('technical_officer/close_jobs');
+                $model = $this->model('JobModel');
+                $result = $model->getAcceptedJobs($_SESSION['user']);
+                $data = array(
+                    'table' => $result
+                );
+                $this->view('technical_officer/close_jobs',$data);
             }
         }
         else {
@@ -51,6 +60,12 @@ class TOController extends Controller{
             $this->view('login','',$error);
         }
 
+    }
+
+    private function getStock() {
+        $model = $this->model('StockModel');
+        $result = $model->getStockAll();
+        return $result;
     }
 
 }

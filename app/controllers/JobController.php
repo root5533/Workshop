@@ -501,6 +501,22 @@ class JobController extends Controller{
         }
     }
 
+    public function closeJob($job_id,$user){
+
+        if($job_id != '' and $user != '') {
+            $data['id'] = $job_id;
+            $data['username'] = $user;
+            $data['message'] = 'ok';
+            $model = $this->model('JobModel');
+            $result = $model->getAcceptedJobs($user);
+            $data['table'] = $result;
+            $this->view('template/head');
+            $this->view('technical_officer/side_bar');
+            $this->view('technical_officer/top_bar');
+            $this->view('technical_officer/close_jobs',$data);
+        }
+    }
+
     public function updateJobAccept(){
 
         if(isset($_POST['submit'])) {
@@ -533,25 +549,32 @@ class JobController extends Controller{
 
     }
 
-    public function closeJob(){
+    public function updateCloseJob(){
 
         if(isset($_POST['submit'])) {
-
             $data = array(
                 'id' => $_POST['id'],
                 'username' => $_POST['username']
             );
-
             $model = $this->model('JobModel');
-            $result = $model->updateJobStatus($data);
+            $result = $model->updateJobClose($data);
 
-            if($result==1){
-                $data['display'] = "Job status updated as closed";
-            } elseif ($result==2){
-                $data['display'] = "Job status update unsuccessful";
+            if($result == 1){
+                $display = "Job Closed!";
             }
-
-            $this->loadCloseJobs($data);
+            else {
+                $display = "Job status update unsuccessful";
+            }
+            $model = $this->model('JobModel');
+            $result = $model->getAcceptedJobs($_SESSION['user']);
+            $data = array(
+                'display' => $display,
+                'table' => $result
+            );
+            $this->view('template/head');
+            $this->view('technical_officer/side_bar');
+            $this->view('technical_officer/top_bar');
+            $this->view('technical_officer/close_jobs',$data);
 
         }
         else {
@@ -559,12 +582,12 @@ class JobController extends Controller{
         }
     }
 
-    public function viewOngoingJobs($user){
+    public function getAcceptedJobs($user){
 
         $data = array('username' => $user);
 
         $model = $this->model('JobModel');
-        $result = $model->to_view_ongoing_jobs($data);
+        $result = $model->getAcceptedJobs($data);
 
         if ($result==1) {
 
@@ -618,27 +641,7 @@ class JobController extends Controller{
 
     }
 
-    public function to_close_job($job_id,$user){
 
-        if(is_numeric($job_id)){
-
-            $data = array(
-                'id' => $job_id,
-                'username' => $user,
-                'message' => 'ok'
-            );
-
-
-//            $model = $this->model('JobModel');
-//            $result = $model->to_view($data);
-
-            $this->loadCloseJobs($data);
-
-        } else{
-            $this->loadCloseJobs();
-        }
-
-    }
 
     private function loadViewAssignJobs($data=[],$error=[]){
         $this->view('template/head');

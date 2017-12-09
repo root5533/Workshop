@@ -6,4 +6,5 @@
     <h4 class="w3-padding-small"><b>CMC WorkShop Management System</b></h4>
     <a href="<?php echo $GLOBALS['base_url']; ?>/TOController/load_view/view_assigned_jobs" id="btn_view_jobs" class="w3-bar-item w3-button">View Assigned Jobs</a>
     <a href="<?php echo $GLOBALS['base_url']; ?>/TOController/load_view/close_jobs" id="btn_view_stock" class="w3-bar-item w3-button">Close Jobs</a>
+    <a href="<?php echo $GLOBALS['base_url']; ?>/TOController/load_view/view_stock" id="btn_view_stock" class="w3-bar-item w3-button">View Stock</a>
 </div>
