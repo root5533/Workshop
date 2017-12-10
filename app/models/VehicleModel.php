@@ -80,4 +80,53 @@ class VehicleModel extends Controller {
         return $result;
     }
 
+    public function checkVehicle($id) {
+        $dbc = $this->db_connect();
+        $query = "SELECT vehicle.id FROM vehicle,vehicleentryrecord WHERE vehicle.registration_no = vehicleentryrecord.id_vehicle AND vehicle.registration_no='$id' AND vehicleentryrecord.leave_time IS NULL";
+        $result = mysqli_query($dbc,$query) or die(mysqli_error($dbc));
+        if(mysqli_num_rows($result) > 0) {
+            return 0;
+        }
+        else {
+            return 1;
+        }
+    }
+
+    public function insertVehicleRecord() {
+        $dbc = $this->db_connect();
+        $query = "INSERT INTO vehicleentryrecord(id_vehicle,date) VALUES('" . $_POST['id'] . "','" . $_POST['date'] . "')";
+        $result = mysqli_query($dbc,$query);
+        if($result) {
+            return 1;
+        }
+        else {
+            return 0;
+        }
+    }
+    public function checkVehicleEntry($id) {
+        $dbc = $this->db_connect();
+        $query = "SELECT vehicle.id FROM vehicle,vehicleentryrecord WHERE vehicle.registration_no = vehicleentryrecord.id_vehicle " .
+            "AND vehicle.registration_no='$id' AND vehicleentryrecord.leave_time IS NULL";
+        $result = mysqli_query($dbc,$query) or die(mysqli_error($dbc));
+        if(mysqli_num_rows($result) > 0) {
+            return mysqli_fetch_array($result);
+        }
+        else {
+            return null;
+        }
+    }
+
+    public function insertVehicleExitRecord() {
+        $dbc = $this->db_connect();
+        $query = "UPDATE vehicleentryrecord SET leave_time=".$_POST['date']." WHERE id=".$_POST['vehicle_entry_id'];
+        $result = mysqli_query($dbc,$query);
+        if($result) {
+            return 1;
+        }
+        else {
+            return 0;
+        }
+    }
+
+
 }

@@ -123,47 +123,11 @@
 
 
     <script>
-        // Script to open and close sidebar
-        function w3_open() {
-            document.getElementById("mySidebar").style.display = "block";
-        }
 
-        function w3_close() {
-            document.getElementById("mySidebar").style.display = "none";
-        }
+        document.getElementById("notifButton").addEventListener("click", displayTONotification);
 
-        //button active mode
+        loadTONotification();
 
-        function ValidatePassKey(tb) {
-    //        if (tb.maxLength >= 1){
-    //            document.getElementById(tb.id + 1).focus();
-    //        }
-            var txtbox1 = document.getElementById("1");
-            var txtbox2 = document.getElementById("2");
-            var txtbox3 = document.getElementById("3");
-            var txtbox4 = document.getElementById("4");
-            var txtbox5 = document.getElementById("5");
-            var txtbox6 = document.getElementById("6");
-            var txtbox7 = document.getElementById("7");
-            var txtbox8 = document.getElementById("8");
-            var txtbox9 = document.getElementById("9");
-
-            if(txtbox1.length==txtbox1.maxLength){
-                txtbox2.focus();
-            }
-
-        }
-
-        //button active mode
-        var page_title = document.getElementById("title").innerHTML;
-
-
-        if(page_title.indexOf("View Assigned Jobs")>-1){
-            document.getElementById("btn_view_assigned_jobs").setAttribute("class","w3-bar-item w3-button w3-teal");
-        }
-        else if(page_title.indexOf("Assigned Stock")>-1){
-            document.getElementById("btn_close_jobs").setAttribute("class","w3-bar-item w3-button w3-teal");
-        }
-
+        window.setInterval(loadTONotification, 8000);
 
     </script>

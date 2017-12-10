@@ -3,8 +3,42 @@
 class LoginController extends Controller {
 
     public function index() {
-        $this->view('template/head');
-        $this->view('login');
+        if(isset($_SESSION['user'])) {
+            if($_SESSION['type'] == 'SO') {
+                $this->view('template/head');
+                $this->view('system_operator/side_bar');
+                $this->view('system_operator/top_bar');
+                $this->view('system_operator/add_jobs');
+            }
+            if($_SESSION['type'] == 'EN') {
+                $this->view('template/head');
+                $this->view('engineer/side_bar');
+                $this->view('engineer/top_bar');
+                $this->view('engineer/view_jobs');
+            }
+            if($_SESSION['type'] == 'TO') {
+                $this->view('template/head');
+                $this->view('technical_officer/side_bar');
+                $this->view('technical_officer/top_bar');
+                $model = $this->model('JobModel');
+                $result = $model->getAssignedJobs($_SESSION['user']);
+                $data = array(
+                    'table' => $result
+                );
+                $this->view('technical_officer/view_assigned_jobs',$data);
+            }
+            else {
+                $this->view('template/head');
+                $this->view('officer/side_bar');
+                $this->view('template/top_bar');
+                $this->view('officer/vehicle_entry');
+            }
+        }
+        else {
+            $this->view('template/head');
+            $this->view('login');
+        }
+
     }
 
     public function authenticate() {
@@ -16,7 +50,6 @@ class LoginController extends Controller {
                 $username = $_POST['user'];
                 $password = $_POST['pwd'];
                 $db = $this->db_connect();
-
                 $query = "SELECT * FROM user WHERE username='$username' AND password='$password'";
                 $result = mysqli_query($db,$query);
                 if(mysqli_num_rows($result) > 0) {
@@ -34,6 +67,9 @@ class LoginController extends Controller {
                     }
                     if ($type == "TO") {
                         header("location: $base/TOController");
+                    }
+                    if ($type == 'LO') {
+                        header("location: $base/OfficerController");
                     }
                     return;
                 }

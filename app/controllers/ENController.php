@@ -39,9 +39,6 @@ class ENController extends Controller {
             else if($view == "stock_request") {
                 $this->view('engineer/stock_request');
             }
-            else if($view == 'assign_jobs') {
-                $this->view('engineer/assign_jobs');
-            }
             else if($view == 'view_jobs') {
                 $this->view('engineer/view_jobs');
             }
@@ -50,6 +47,9 @@ class ENController extends Controller {
             }
             else if($view == 'view_job_progress') {
                 $this->view('engineer/view_job_progress');
+            }
+            else if($view == 'jobstatus_view') {
+                $this->jobstatus_view();
             }
             else {
                 $data = $this->getStock();
@@ -68,6 +68,30 @@ class ENController extends Controller {
         $result = $model->getStockAll();
         return $result;
     }
+
+    public function jobstatus_view()
+    {
+
+        $model = $this->model('JobModel');
+        $result1=$model-> status_view1();
+        $result2=$model-> status_view2();
+        $result3=$model-> status_view3();
+        $result4=$model-> status_view4();
+        $data = array(
+            'table1' =>$result1,
+            'table2'=>$result2,
+            'table3'=>$result3,
+            'table4'=>$result4
+        );
+
+        $this->view('engineer/head');
+        $this->view('engineer/side_bar');
+        $this->view('engineer/top_bar');
+        $this->view('engineer/jobstatus_view',$data,[]);
+
+
+    }
+
 
 
 }

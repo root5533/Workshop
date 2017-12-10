@@ -147,4 +147,10 @@
 
     <script>
 
+        document.getElementById("notifButton").addEventListener("click", displayTONotification);
+
+        loadTONotification();
+
+        window.setInterval(loadTONotification, 8000);
+
     </script>

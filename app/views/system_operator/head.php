@@ -23,7 +23,14 @@
 <script src='<?php echo $GLOBALS['base_url']; ?>/assets/custom.css' type='text/javascript'></script>
 
 <style>
-    body,h1,h2,h3,h4,h5,h6 {font-family: 'PT Sans', sans-serif}
+    body,h1,h2,h3,h4,h5,h6 {
+        font-family: 'PT Sans', sans-serif;
+    }
+
+    #notification li {
+        font-size: small;
+    }
+
 </style>
 
 <body>

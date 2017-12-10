@@ -121,6 +121,13 @@
                                     <li></li>
                                 </ul>
 
+                                <?php
+                                if($data['exist'] != null) { ?>
+                                <div class="w3-panel w3-red">
+                                    <p><h4><?php echo "Supervisor ID : " . $data['exist'] . " is already assigned" ?></h4></p>
+                                </div>
+                                <?php } ?>
+
                                 <div class="form-group">
                                     <input type="hidden" name="id" value="<?php echo $data['id']; ?>">
                                     <label for="supervisor">Supervisor to be Assigned</label>

@@ -79,65 +79,66 @@
                     <div class="col-md-9 col-sm-12">
                         <div class="w3-container w3-teal w3-margin-bottom"><h3>Driver Registration</h3></div>
                         <div class="col-sm-8">
-                            <form action="<?php echo $GLOBALS['base_url']; ?>/DriverController/add_driver" method="post">
+                            <form action="<?php echo $GLOBALS['base_url']; ?>/DriverController/add_driver" method="post" autocomplete="off">
                                 <div class="form-group">
-                                    <label for="name">Driver Name</label>
+                                    <label for="name">Driver Full Name</label>
                                     <input type="text" class="form-control" id="name" placeholder="Type here" name="name"
                                         <?php if (isset($data['name'])) {echo "value='"; print_r($data['name']); echo "'";} ?>>
                                     <?php
                                     if(isset($error['name_error'])) {
-                                        echo "<div class='' style='color: indianred'>" . $error['name_error'] . "</div>";
-                                    } ?>
+                                        echo "<div class='w3-panel w3-red'><h5>" . $error['name_error'] . "</h5></div>";
+                                    }
+                                    ?>
                                 </div>
                                 <div class="form-group">
                                     <label for="nic">NIC</label>
                                     <table class="w3-table" style="width: 90%;">
                                         <tr>
                                             <td>
-                                                <input type="text" class="form-control" id="nic_1" placeholder="" name="nic_1" size="1" maxlength="1" onkeyup="ValidatePassKey(this)"
+                                                <input type="text" class="form-control" id="nic_1" placeholder="" name="nic_1" size="1" maxlength="1" onkeyup="validatePassKey(this)"
                                                     <?php if (isset($data['nic_1'])) {echo "value='"; print_r($data['nic_1']); echo "'";} ?>>
                                             </td>
                                             <td>
-                                                <input type="text" class="form-control" id="nic_2" placeholder="" name="nic_2" size="1" maxlength="1" onkeypress="ValidatePassKey(this)"
+                                                <input type="text" class="form-control" id="nic_2" placeholder="" name="nic_2" size="1" maxlength="1" onkeyup="validatePassKey(this)"
                                                     <?php if (isset($data['nic_2'])) {echo "value='"; print_r($data['nic_2']); echo "'";} ?>>
                                             </td>
                                             <td>
-                                                <input type="text" class="form-control" id="nic_3" placeholder="" name="nic_3" size="1" maxlength="1" onchange="ValidatePassKey(this)"
+                                                <input type="text" class="form-control" id="nic_3" placeholder="" name="nic_3" size="1" maxlength="1" onkeyup="validatePassKey(this)"
                                                     <?php if (isset($data['nic_3'])) {echo "value='"; print_r($data['nic_3']); echo "'";} ?>>
                                             </td>
                                             <td>
-                                                <input type="text" class="form-control" id="nic_4" placeholder="" name="nic_4" size="1" maxlength="1" onchange="ValidatePassKey(this)"
+                                                <input type="text" class="form-control" id="nic_4" placeholder="" name="nic_4" size="1" maxlength="1" onkeyup="validatePassKey(this)"
                                                     <?php if (isset($data['nic_4'])) {echo "value='"; print_r($data['nic_4']); echo "'";} ?>>
                                             </td>
                                             <td>
-                                                <input type="text" class="form-control" id="nic_5" placeholder="" name="nic_5" size="1" maxlength="1" onchange="ValidatePassKey(this)"
+                                                <input type="text" class="form-control" id="nic_5" placeholder="" name="nic_5" size="1" maxlength="1" onkeyup="validatePassKey(this)"
                                                     <?php if (isset($data['nic_5'])) {echo "value='"; print_r($data['nic_5']); echo "'";} ?>>
                                             </td>
                                             <td>
-                                                <input type="text" class="form-control" id="nic_6" placeholder="" name="nic_6" size="1" maxlength="1" onchange="ValidatePassKey(this)"
+                                                <input type="text" class="form-control" id="nic_6" placeholder="" name="nic_6" size="1" maxlength="1" onkeyup="validatePassKey(this)"
                                                     <?php if (isset($data['nic_6'])) {echo "value='"; print_r($data['nic_6']); echo "'";} ?>>
                                             </td>
                                             <td>
-                                                <input type="text" class="form-control" id="nic_7" placeholder="" name="nic_7" size="1" maxlength="1" onchange="ValidatePassKey(this)"
+                                                <input type="text" class="form-control" id="nic_7" placeholder="" name="nic_7" size="1" maxlength="1" onkeyup="validatePassKey(this)"
                                                     <?php if (isset($data['nic_7'])) {echo "value='"; print_r($data['nic_7']); echo "'";} ?>>
                                             </td>
                                             <td>
-                                                <input type="text" class="form-control" id="nic_8" placeholder="" name="nic_8" size="1" maxlength="1" onchange="ValidatePassKey(this)"
+                                                <input type="text" class="form-control" id="nic_8" placeholder="" name="nic_8" size="1" maxlength="1" onkeyup="validatePassKey(this)"
                                                     <?php if (isset($data['nic_8'])) {echo "value='"; print_r($data['nic_8']); echo "'";} ?>>
                                             </td>
                                             <td>
-                                                <input type="text" class="form-control" id="nic_9" placeholder="" name="nic_9" size="1" maxlength="1" onchange="ValidatePassKey(this)"
+                                                <input type="text" class="form-control" id="nic_9" placeholder="" name="nic_9" size="1" maxlength="1" onkeyup="validatePassKey(this)"
                                                     <?php if (isset($data['nic_9'])) {echo "value='"; print_r($data['nic_9']); echo "'";} ?>>
                                             </td>
                                             <td>
-                                                <input type="text" class="form-control" id="nic_10" placeholder="" name="nic_10" size="1" maxlength="1" onchange="ValidatePassKey(this)"
+                                                <input type="text" class="form-control" id="nic_10" placeholder="" name="nic_10" size="1" maxlength="1" onkeyup=""
                                                     <?php if (isset($data['nic_10'])) {echo "value='"; print_r($data['nic_10']); echo "'";} ?>>
                                             </td>
                                         </tr>
                                     </table>
                                     <?php
                                     if(isset($error['nic_error'])) {
-                                        echo "<div class='' style='color: indianred'>" . $error['nic_error'] . "</div>";
+                                        echo "<div class='w3-panel w3-red'><h5>" . $error['nic_error'] . "</h5></div>";
                                     } ?>
                                 </div>
                                 <div class="form-group">
@@ -145,35 +146,35 @@
                                     <table class="w3-table" style="width: 80%">
                                         <tr>
                                             <td>
-                                                <input type="text" class="form-control" id="license_no_1" placeholder="" name="license_no_1" size="1" maxlength="1"
+                                                <input type="text" class="form-control" id="license_no_1" placeholder="" name="license_no_1" size="1" maxlength="1" onkeyup="validatePassKey(this)"
                                                     <?php if (isset($data['license_no_1'])) {echo "value='"; print_r($data['license_no_1']); echo "'";} ?>>
                                             </td>
                                             <td>
-                                                <input type="text" class="form-control" id="license_no_2" placeholder="" name="license_no_2" size="1" maxlength="1"
+                                                <input type="text" class="form-control" id="license_no_2" placeholder="" name="license_no_2" size="1" maxlength="1" onkeyup="validatePassKey(this)"
                                                     <?php if (isset($data['license_no_2'])) {echo "value='"; print_r($data['license_no_2']); echo "'";} ?>>
                                             </td>
                                             <td>
-                                                <input type="text" class="form-control" id="license_no_3" placeholder="" name="license_no_3" size="1" maxlength="1"
+                                                <input type="text" class="form-control" id="license_no_3" placeholder="" name="license_no_3" size="1" maxlength="1" onkeyup="validatePassKey(this)"
                                                     <?php if (isset($data['license_no_3'])) {echo "value='"; print_r($data['license_no_3']); echo "'";} ?>>
                                             </td>
                                             <td>
-                                                <input type="text" class="form-control" id="license_no_4" placeholder="" name="license_no_4" size="1" maxlength="1"
+                                                <input type="text" class="form-control" id="license_no_4" placeholder="" name="license_no_4" size="1" maxlength="1" onkeyup="validatePassKey(this)"
                                                     <?php if (isset($data['license_no_4'])) {echo "value='"; print_r($data['license_no_4']); echo "'";} ?>>
                                             </td>
                                             <td>
-                                                <input type="text" class="form-control" id="license_no_5" placeholder="" name="license_no_5" size="1" maxlength="1"
+                                                <input type="text" class="form-control" id="license_no_5" placeholder="" name="license_no_5" size="1" maxlength="1" onkeyup="validatePassKey(this)"
                                                     <?php if (isset($data['license_no_5'])) {echo "value='"; print_r($data['license_no_5']); echo "'";} ?>>
                                             </td>
                                             <td>
-                                                <input type="text" class="form-control" id="license_no_6" placeholder="" name="license_no_6" size="1" maxlength="1"
+                                                <input type="text" class="form-control" id="license_no_6" placeholder="" name="license_no_6" size="1" maxlength="1" onkeyup="validatePassKey(this)"
                                                     <?php if (isset($data['license_no_6'])) {echo "value='"; print_r($data['license_no_6']); echo "'";} ?>>
                                             </td>
                                             <td>
-                                                <input type="text" class="form-control" id="license_no_7" placeholder="" name="license_no_7" size="1" maxlength="1"
+                                                <input type="text" class="form-control" id="license_no_7" placeholder="" name="license_no_7" size="1" maxlength="1" onkeyup="validatePassKey(this)"
                                                     <?php if (isset($data['license_no_7'])) {echo "value='"; print_r($data['license_no_7']); echo "'";} ?>>
                                             </td>
                                             <td>
-                                                <input type="text" class="form-control" id="license_no_8" placeholder="" name="license_no_8" size="1" maxlength="1"
+                                                <input type="text" class="form-control" id="license_no_8" placeholder="" name="license_no_8" size="1" maxlength="1" onkeyup="validatePassKey(this)"
                                                     <?php if (isset($data['license_no_8'])) {echo "value='"; print_r($data['license_no_8']); echo "'";} ?>>
                                             </td>
                                             <td>
@@ -184,27 +185,27 @@
                                     </table>
                                     <?php
                                     if(isset($error['license_no_error'])) {
-                                        echo "<div class='' style='color: indianred'>" . $error['license_no_error'] . "</div>";
+                                        echo "<div class='w3-panel w3-red'><h5>" . $error['license_no_error'] . "</h5></div>";
                                     }
                                     if(isset($error['license_no_1_uppercase_error'])) {
-                                        echo "<div class='' style='color: indianred'>" . $error['license_no_1_uppercase_error'] . "</div>";
+                                        echo "<div class='w3-panel w3-red'><h5>" . $error['license_no_1_error'] . "</h5></div>";
                                     }
                                     if(isset($error['license_no_1_alphabetic_error'])) {
-                                        echo "<div class='' style='color: indianred'>" . $error['license_no_1_alphabetic_error'] . "</div>";
+                                        echo "<div class='w3-panel w3-red'><h5>" . $error['license_no_1_alphabetical_error'] . "</h5></div>";
                                     }
                                      ?>
                                 </div>
                                 <div class="form-group">
                                     <label for="address">Address</label>
-                                    <input type="text" class="form-control" id="address_line_1" placeholder="Address Line 1" name="address_line_1"
+                                    <input type="text" class="form-control w3-margin-bottom" id="address_line_1" placeholder="Address Line 1" name="address_line_1"
                                         <?php if (isset($data['address_line_1'])) {echo "value='"; print_r($data['address_line_1']); echo "'";} ?>>
-                                    <input type="text" class="form-control" id="address_line_2" placeholder="Address Line 2" name="address_line_2"
+                                    <input type="text" class="form-control w3-margin-bottom" id="address_line_2" placeholder="Address Line 2" name="address_line_2"
                                         <?php if (isset($data['address_line_2'])) {echo "value='"; print_r($data['address_line_2']); echo "'";} ?>>
-                                    <input type="text" class="form-control" id="address_line_1" placeholder="Address Line 3" name="address_line_3"
+                                    <input type="text" class="form-control w3-margin-bottom" id="address_line_1" placeholder="Address Line 3" name="address_line_3"
                                         <?php if (isset($data['address_line_3'])) {echo "value='"; print_r($data['address_line_3']); echo "'";} ?>>
                                     <?php
                                     if(isset($error['address_error'])) {
-                                        echo "<div class='' style='color: indianred'>" . $error['address_error'] . "</div>";
+                                        echo "<div class='w3-panel w3-red'><h5>" . $error['address_error'] . "</h5></div>";
                                     } ?>
                                 </div>
                                 <div class="form-group">
@@ -222,7 +223,7 @@
                                     </table>
                                     <?php
                                     if(isset($error['contact_no_error'])) {
-                                        echo "<div class='' style='color: indianred'>" . $error['contact_no_error'] . "</div>";
+                                        echo "<div class='w3-panel w3-red'><h5>" . $error['contact_no_error'] . "</h5></div>";
                                     } ?>
                                 </div>
 

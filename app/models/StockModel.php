@@ -53,7 +53,7 @@ class StockModel extends Controller {
         $text = "Quantity : " . $data['amount'] . "<br>Job ID : " . $data['id'] ;
         $get = "/Controller/function/parameter";
 
-        $comment_query = "INSERT INTO tocomments(comment_subject,comment_text,get_request) VALUES('$subject','$text','$get')";
+        $comment_query = "INSERT INTO storecomments(comment_subject,comment_text,get_request) VALUES('$subject','$text','$get')";
 
         $result2 = mysqli_query($dbc,$comment_query) or die(mysqli_error($dbc));
 

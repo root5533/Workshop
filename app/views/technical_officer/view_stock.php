@@ -123,11 +123,11 @@
     });
 
 
-    document.getElementById("notifButton").addEventListener("click", loadDoc);
+    document.getElementById("notifButton").addEventListener("click", displayTONotification);
 
-    load_notification();
+    loadTONotification();
 
-    window.setInterval(test, 5000);
+    window.setInterval(loadTONotification, 8000);
 
 </script>
 

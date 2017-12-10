@@ -32,9 +32,7 @@
         font-family: 'PT Sans', sans-serif;
     }
 
-    #notification a {
-        color: black;
-        text-decoration: none;
+    #notification li {
         font-size: small;
     }
 

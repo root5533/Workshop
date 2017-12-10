@@ -8,6 +8,7 @@
 <!--    <a href="--><?php //echo $GLOBALS['base_url']; ?><!--/ENController/load_view/assign_jobs" class="w3-bar-item w3-button">Assign Jobs</a>-->
     <a href="<?php echo $GLOBALS['base_url']; ?>/ENController/load_view/view_jobs" class="w3-bar-item w3-button">Assign Job</a>
     <a href="<?php echo $GLOBALS['base_url']; ?>/ENController/load_view/view_job_progress" class="w3-bar-item w3-button">View Job Progress</a>
+    <a href="<?php echo $GLOBALS['base_url']; ?>/ENController/load_view/jobstatus_view" class="w3-bar-item w3-button">Job Status</a>
 
 
 

@@ -14,7 +14,7 @@
                     <div class="col-md-9 col-sm-12">
                         <div class="w3-container w3-teal w3-margin-bottom"> <h3>Vehicle Registration</h3> </div>
                         <div class="col-sm-8 w3-padding-large">
-                            <form action="<?php echo $GLOBALS['base_url']; ?>/VehicleController/add_vehicle" method="post">
+                            <form action="<?php echo $GLOBALS['base_url']; ?>/VehicleController/add_vehicle" method="post" autocomplete="off">
                                 <div class="form-group">
                                     <label for="id_driver">Driver Name</label>
                                     <input type="text" class="form-control" id="driver" placeholder="Type here" name="id_driver" style="width: 50%;"
@@ -28,8 +28,18 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="type">Vehicle Type</label>
-                                    <input type="text" class="form-control" id="type" placeholder="Type here" name="type"
+                                    <select type="text" class="form-control" id="type" placeholder="Type here" name="type" style="width: 30%;"
                                         <?php if (isset($data['type'])) {echo "value='"; print_r($data['type']); echo "'";} ?>>
+                                        <option disabled selected value="0"> -- select an option -- </option>
+                                        <option value="lorry">Lorry</option>
+                                        <option value="garbage truck">Garbage Truck</option>
+                                        <option value="fire truck">Fire Truck</option>
+                                        <option value="crane">Crane</option>
+                                        <option value="bulldozer">Bulldozer</option>
+                                        <option value="excavator">Excavator</option>
+                                        <option value="road roller">Road Roller</option>
+                                        <option value="other">Other</option>
+                                    </select>
                                     <?php
                                     if(isset($error['type_error'])) {
                                         echo "<div class='w3-panel w3-red'><h5>" . $error['type_error'] . "</h5></div>";
@@ -37,7 +47,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="brand">Vehicle brand</label>
-                                    <input class="form-control" type="text" id="brand" placeholder="Type here" name="brand"
+                                    <input class="form-control" type="text" id="brand" placeholder="Type here" name="brand" style="width: 30%;"
                                         <?php if (isset($data['brand'])) {echo "value='"; print_r($data['brand']); echo "'";} ?>>
                                     <?php if(isset($error['brand_error'])) {
                                         echo "<div class='w3-panel w3-red'><h5>" . $error['brand_error'] . "</h5></div>";

@@ -14,6 +14,17 @@ function loadDoc() {
     load_notification("yes");
 }
 
+function displayTONotification() {
+    console.log("display TO Notification");
+    var x = document.getElementById("notification");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+    loadTONotification("yes");
+}
+
 
 function load_notification(view='') {
     // console.log("loading notifications");
@@ -46,6 +57,28 @@ function load_notification(view='') {
     // a.innerHTML = data['content'];
     // a.href = data['title'];
     // ------------------------
+}
+
+function loadTONotification(view='') {
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            console.log(this);
+            var data = JSON.parse(this.responseText);
+            // console.log(data);
+            document.getElementById("notification").innerHTML = data.notification;
+            if (data.unseen_notification > 0) {
+                document.getElementById("count").innerHTML = data.unseen_notification;
+            }
+            else{
+                document.getElementById("count").innerHTML = '';
+            }
+        }
+    };
+
+    xhttp.open("POST", "/wshop/public/NotificationController/getTONotifications", true);
+    xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xhttp.send("view="+view);
 }
 
 
