@@ -117,4 +117,38 @@ class StockController extends Controller {
         }
     }
 
+    public function checkJobStock($id){
+
+        $model = $this->model('StockModel');
+        $result = $model->getJobStockAvailability($id);
+        $data = array(
+            'id' => $id,
+            'jobstock' => $result
+        );
+        $this->view('store_keeper/head');
+        $this->view('store_keeper/side_bar');
+        $this->view('store_keeper/top_bar');
+        $this->view('store_keeper/stock_issue_view',$data);
+
+    }
+
+    public function updateStock($id){
+
+        $model = $this->model('StockModel');
+        $resultUpdate = $model->updateStock($id);
+
+//        if($result==1){
+//            $data = array('display' => 'Stock issue complete!');
+//        } elseif ($result==2){
+//            $data = array('display' => 'Problem updating stock database!');
+//        }
+
+        $this->view('store_keeper/head');
+        $this->view('store_keeper/side_bar');
+        $this->view('store_keeper/top_bar');
+        $model = $this->model('StockModel');
+        $result = $model->getLimitedStock();
+        $this->view('store_keeper/view_stock',$result);
+    }
+
 }

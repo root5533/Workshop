@@ -11,10 +11,10 @@
     <div class="w3-container w3-margin-bottom">
         <div class="w3-container w3-white w3-padding-large">
             <div class="row-content">
-                <div class="w3-margin-bottom">
-                    <div class="w3-panel w3-teal">
-                        <h3>Open Jobs</h3>
-                    </div>
+                <div class="w3-panel w3-teal">
+                    <h3>Open Jobs</h3>
+                </div>
+                <div class="w3-margin-bottom scroll">
                     <table class="w3-table-all w3-centered">
                         <thead>
                         <tr>
@@ -55,10 +55,10 @@
                         </tbody>
                     </table>
                 </div>
-                <div class="w3-margin-bottom">
-                    <div class="w3-panel w3-teal">
-                        <h3>Assigned Jobs</h3>
-                    </div>
+                <div class="w3-panel w3-teal">
+                    <h3>Assigned Jobs</h3>
+                </div>
+                <div class="w3-margin-bottom scroll">
                     <table class="w3-table-all w3-centered">
                         <thead>
                         <tr>
@@ -91,11 +91,10 @@
                     </table>
                 </div>
 
-
-                <div class="w3-margin-bottom">
-                    <div class="w3-panel w3-teal">
-                        <h3>Ongoing Jobs</h3>
-                    </div>
+                <div class="w3-panel w3-teal">
+                    <h3>Ongoing Jobs</h3>
+                </div>
+                <div class="w3-margin-bottom scroll">
                     <table class="w3-table-all w3-centered">
                         <thead>
                         <tr>
@@ -129,10 +128,10 @@
                     </table>
                 </div>
 
-                <div class="w3-margin-bottom">
-                    <div class="w3-panel w3-teal">
-                        <h3>Completed Jobs</h3>
-                    </div>
+                <div class="w3-panel w3-teal">
+                    <h3>Completed Jobs</h3>
+                </div>
+                <div class="w3-margin-bottom scroll">
                     <table class="w3-table-all w3-centered">
                         <thead>
                         <tr>

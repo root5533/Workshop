@@ -9,7 +9,7 @@ class ENController extends Controller {
                 $this->view('template/head');
                 $this->view('engineer/side_bar');
                 $this->view('engineer/top_bar');
-                $this->view('engineer/view_stock',$data);
+                $this->view('engineer/view_jobs');
             }
             else {
                 $base = $GLOBALS['base_url'];

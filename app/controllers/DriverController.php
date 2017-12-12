@@ -58,7 +58,7 @@ class DriverController extends Controller{
                 $error['contact_no_error'] = "*Please fill the contact no";
             }
             elseif (!is_numeric($contact_no)){
-                $error['contact_no_error'] = "*The contact no should be in integers";
+                $error['contact_no_error'] = "*The contact number should be in integers";
             }
 
 

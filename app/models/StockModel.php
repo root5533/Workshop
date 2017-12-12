@@ -83,6 +83,8 @@ class StockModel extends Controller {
         return $data;
     }
 
+
+
     public function checkStockReceived($id) {
         $dbc = $this->db_connect();
         $query = "SELECT stock_id,amount FROM jobstock WHERE job_id='$id' AND issue=0";
@@ -96,6 +98,73 @@ class StockModel extends Controller {
             $data = 1;
         }
         return $data;
+    }
+
+    public function getLimitedStock() {
+        $dbc = $this->db_connect();
+        $query = "SELECT description,item_code,amount,minimum FROM stock WHERE amount<minimum ORDER BY amount ASC";
+        $result = mysqli_query($dbc,$query) or die($dbc);
+        if(mysqli_num_rows($result)>0){
+            while ($row = mysqli_fetch_array($result)) {
+                $data[] = $row;
+            }
+            $this->db_close($dbc);
+            return $data;
+        } else {
+            $this->db_close($dbc);
+            return $result;
+        }
+
+    }
+
+    public function updateStock($id){
+
+        $dbc = $this->db_connect();
+        $subject = "Stock Issued from Store";
+        $text = "JobID : " . $id;
+        $get = "JobController/acceptJob/".$id."/".$_SESSION['user'];
+
+        $query = "SELECT jobstock.stock_id as 'stock_id',jobstock.amount as 'job_amount',stock.amount as 'stock_amount' FROM stock,jobstock " .
+            " WHERE jobstock.stock_id=stock.item_code AND jobstock.job_id='".$id."' AND jobstock.issue='0'";
+        $result = mysqli_query($dbc,$query);
+        if(mysqli_num_rows($result)>0) {
+            while ($row = mysqli_fetch_array($result)) {
+                $data[] = $row;
+            }
+        }
+
+        foreach ($data as $row) {
+            $query = "UPDATE jobstock SET issue='1' WHERE stock_id='".$row['stock_id']."'";
+            mysqli_query($dbc,$query) or die($dbc);
+        }
+
+
+        $comment_query = "INSERT INTO tocomments(comment_subject,comment_text,get_request) VALUES('$subject','$text','$get')";
+        $result = mysqli_query($dbc,$comment_query);
+        if($result) {
+            return 1;
+        }
+        else{
+            return 0;
+        }
+
+    }
+
+    public function getJobStockAvailability($id){
+        $dbc = $this->db_connect();
+        $query = "SELECT jobstock.stock_id as 'stock_id',jobstock.amount as 'job_amount',stock.amount as 'stock_amount' FROM stock,jobstock " .
+            " WHERE jobstock.stock_id=stock.item_code AND jobstock.job_id='".$id."' AND jobstock.issue='0'";
+        $result = mysqli_query($dbc,$query);
+        if(mysqli_num_rows($result)>0){
+            while ($row = mysqli_fetch_array($result)) {
+                $data[] = $row;
+            }
+            return $data;
+        }
+        else {
+            $this->db_close($dbc);
+            return null;
+        }
     }
 
 }

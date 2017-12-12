@@ -420,13 +420,11 @@ class JobController extends Controller{
         $result = $model->getJobDetails($job_id);
         $result2 = $model->checkSupervisor($job_id);
         print_r($result2);
+        $exist = '';
         if($result2) {
-            echo "not null";
             $exist = $result2;
         }
-        else {
-            echo "null";
-        }
+
         $row = mysqli_fetch_array($result);
         $msg = '';
         if($sup_id != '') {

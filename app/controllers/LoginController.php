@@ -4,35 +4,26 @@ class LoginController extends Controller {
 
     public function index() {
         if(isset($_SESSION['user'])) {
+            $base = $GLOBALS['base_url'];
             if($_SESSION['type'] == 'SO') {
-                $this->view('template/head');
-                $this->view('system_operator/side_bar');
-                $this->view('system_operator/top_bar');
-                $this->view('system_operator/add_jobs');
+                header("location: ".$GLOBALS['base_url']."/SOController/");
+
             }
             if($_SESSION['type'] == 'EN') {
-                $this->view('template/head');
-                $this->view('engineer/side_bar');
-                $this->view('engineer/top_bar');
-                $this->view('engineer/view_jobs');
+                header("location: $base/ENController");
+
             }
             if($_SESSION['type'] == 'TO') {
-                $this->view('template/head');
-                $this->view('technical_officer/side_bar');
-                $this->view('technical_officer/top_bar');
-                $model = $this->model('JobModel');
-                $result = $model->getAssignedJobs($_SESSION['user']);
-                $data = array(
-                    'table' => $result
-                );
-                $this->view('technical_officer/view_assigned_jobs',$data);
+                header("location: $base/TOController");
+
             }
-            else {
-                $this->view('template/head');
-                $this->view('officer/side_bar');
-                $this->view('template/top_bar');
-                $this->view('officer/vehicle_entry');
+            if($_SESSION['type'] == 'LO') {
+                header("location: $base/OfficerController");
             }
+            if($_SESSION['type'] == 'SK') {
+                header("location: $base/SKController");
+            }
+//            var_dump($_SESSION);
         }
         else {
             $this->view('template/head');
@@ -42,6 +33,7 @@ class LoginController extends Controller {
     }
 
     public function authenticate() {
+//        var_dump($_SESSION);
         if (isset($_POST['submit'])) {
             if (empty(trim($_POST['user'])) or empty(trim($_POST['pwd']))) {
                 $error['login_error'] = "Please enter your username and password";
@@ -71,11 +63,15 @@ class LoginController extends Controller {
                     if ($type == 'LO') {
                         header("location: $base/OfficerController");
                     }
+                    if ($type == 'SK') {
+                        header("location: $base/SKController");
+                    }
                     return;
                 }
                 else {
                     $error['login_error'] = "Invalid username and password! Please try again";
                 }
+                var_dump($_SESSION);
 
             }
             $this->view('template/head');

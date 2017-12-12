@@ -7,7 +7,6 @@ class SOController extends Controller
     {
         if (isset($_SESSION['user'])) {
             if($_SESSION['type'] == 'SO') {
-                echo "sdfsdfasdf";
                 $this->view('template/head');
                 $this->view('system_operator/side_bar');
                 $this->view('system_operator/top_bar');

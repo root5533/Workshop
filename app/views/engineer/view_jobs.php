@@ -25,7 +25,7 @@
             <div class="w3-container w3-white w3-padding-large">
                 <div class="row-content">
                     <div class="col-md-9 col-sm-12">
-                        <div class="w3-container w3-teal w3-margin-bottom"><h3>Maintenance Section - View Job Entries</h3></div>
+                        <div class="w3-container w3-teal w3-margin-bottom"><h3>Search Job to Assign Supervisor</h3></div>
                         <div class="col-sm-12">
                             <form action="<?php echo $GLOBALS['base_url']; ?>/JobController/engineer_view_job_entry" method="post">
                                 <div class="col-xs-4">
@@ -42,7 +42,7 @@
                                             <option value="vehicle.registration_no">Vehicle Registration Number</option>
                                             <option value="driver.name">Job Applicant / Driver</option>
                                             <option value="user">User</option>
-                                            <option value="description">Job Applicant</option>
+                                            <option value="description">Job Description</option>
                                         </select>
                                     </div>
                                 </div>
@@ -111,7 +111,7 @@
                 var query2 = $('#search_type').val();
                 if (query != '') {
                     $.ajax({
-                        url:"<?php echo $GLOBALS['base_url']; ?>/JobController/getJobAuto",
+                        url:"<?php echo $GLOBALS['base_url']; ?>/JobController/getJobAuto/0",
                         method:"POST",
                         data:{query:query, query2:query2},
                         success:function(data) {
@@ -134,40 +134,6 @@
             console.log('1111111111111111111111111');
 
         });
-
-//        jQuery(document).ready(function($) {
-//            console.log('1111111111111111111111111');
-//            $(".clickable-row").click(function() {
-//                console.log('##################################');
-//                console.log('came here');
-//                window.location = $(this).data("href");
-//            });
-//        });
-
-
-
-//        var url = window.location.href;
-//
-//        if(url.indexOf("view_job_entry")>-1){
-//            document.getElementById("search_table").style.display = "table";
-//        }
-//
-//        //button active mode
-//        var page_title = document.getElementById("title").innerHTML;
-//
-//
-//        if(page_title.indexOf("View Jobs")>-1){
-//            document.getElementById("btn_view_jobs").setAttribute("class","w3-bar-item w3-button w3-teal");
-//        }
-//        else if(page_title.indexOf("View Stock")>-1){
-//            document.getElementById("btn_view_jobs").setAttribute("class","w3-bar-item w3-button w3-teal");
-//        }
-//        else if(page_title.indexOf("Assign Jobs")>-1){
-//            document.getElementById("btn_assign_jobs").setAttribute("class","w3-bar-item w3-button w3-teal");
-//        }
-//        else if(page_title.indexOf("Stock Request")>-1){
-//            document.getElementById("btn_stock_request").setAttribute("class","w3-bar-item w3-button w3-teal");
-//        }
 
 
 

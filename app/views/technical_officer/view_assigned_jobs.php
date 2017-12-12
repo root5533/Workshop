@@ -105,7 +105,7 @@
                                     </thead>
                                     <tbody>
                                     <?php
-                                    if($data['table'] != 0) {
+                                    if($data['table'] != null) {
                                         foreach ($data['table'] as $value) {
                                             echo " 
                                         <tr>
